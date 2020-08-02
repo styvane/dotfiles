@@ -26,8 +26,11 @@ brew install gnu-sed
 brew install bash
 brew install bash-completion2
 
-# Install latex
+# Install latex.
 brew cask install mactex
+
+# Install jq.
+brew install jq
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -35,7 +38,7 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   chsh -s "${BREW_PREFIX}/bin/bash";
 fi;
 
-# Install `wget` with IRI support.
+# Install `wget`.
 brew install wget
 
 # Install GnuPG to enable PGP-signing commits.

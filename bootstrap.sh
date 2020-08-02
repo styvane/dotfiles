@@ -6,7 +6,7 @@ git pull origin main;
 
 function doIt() {
         if [[ "$OSTYPE" =~ ^darwin ]]; then
-	rsync --exclude ".git/" \
+	    rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
