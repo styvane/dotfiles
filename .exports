@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Make emacs default editor
+export EDITOR="emacs"
+
+# Make urxvt default terminal on linux
+if [[ ! "$OSTYPE" =~ ^darwin ]]; then
+    export TERM="rxvt-unicode-256color"
+fi
+
+
+# Increase the maximum number of lines contained in the history file
+export HISTSIZE=32768
+
+# Increase the maximum number of commands to remember
+export HISTFILESIZE="${HISTSIZE}"
+
+# Ignore duplicate commands in the history
+export HISTCONTROL='ignoreboth'
+
+# Make some commands not show up in history
+export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:date:* "
+
+# Make new shells get the history lines from all previous
+# shells instead of the default "last window closed" history
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+# Highlight section titles in manual pages.
+export LESS_TERMCAP_md="${yellow}";
+
+# Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X';
+
+# Avoid issues with `gpg` as installed via Homebrew.
+# https://stackoverflow.com/a/42265848/96656
+export GPG_TTY=$(tty);
+
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Hide the “default interactive shell is now zsh” warning on macOS.
+export BASH_SILENCE_DEPRECATION_WARNING=1;
