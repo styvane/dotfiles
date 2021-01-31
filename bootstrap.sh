@@ -18,7 +18,9 @@ function doIt() {
 		--exclude ".Xprofile" \
 		--exclude "apt.sh" \
 		--exclude "firefox.desktop" \
-		-avh --no-perms . ~;
+		--exclude "install.sh" \
+		--exclude "jon-tyson-unsplash.jpg"
+	        -avh --no-perms . ~;
 	else
 	    rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
@@ -26,9 +28,14 @@ function doIt() {
 		--exclude "README.md" \
 		--exclude ".macos" \
 		--exclude "brew.sh" \
+		--exclude "apt.sh" \
+		--exclude "firefox.desktop" \
+		--exclude "install.sh" \
+		--exclude "jon-tyson-unsplash.jpg"
 		-avh --no-perms . ~;
 
 	fi
+	
 	source ~/.bash_profile;
 }
 
