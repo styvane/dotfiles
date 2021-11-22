@@ -12,15 +12,19 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
-  :hook ((rust-mode . lsp)
+  :hook (;;(rust-mode . lsp)
 	 (go-mode . lsp-deferred)))
 
+(setq rust-format-on-save t)
 
-;; Rust hook and settings
-(add-hook 'before-save-hook (lambda () (when (eq 'rust-mode major-mode)
-					 (lsp-format-buffer))))
-(setq lsp-rust-server 'rust-analyzer)
-(setq lsp-rust-analyzer-server-command '("~/.cargo/bin/rust-analyzer"))
+;;(add-hook 'before-save-hook (lambda () (when (eq 'rust-mode major-mode)
+;;					 (lsp-format-buffer))))
+
+;;(setq lsp-rust-server 'rust-analyzer)
+;;(setq lsp-rust-analyzer-server-command '("~/.cargo/bin/rust-analyzer"))
+(setq-default indent-tabs-mode nil)
+(setq column-number-mode t)
+(delete-selection-mode 1)
 
 ;; Set up before-save hooks to format buffer and add/delete imports.
 ;; Make sure you don't have other gofmt/goimports hooks enabled.
@@ -28,6 +32,9 @@
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+
+;; formatting hook python-mode
+(add-hook 'python-mode-hook 'blacken-mode)
 
 ;; Company mode is a standard completion package that works well with lsp-mode.
 (use-package company
@@ -40,6 +47,12 @@
 ;; C/C++ coding style
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
+;; SQL formatter
+
+(setq sqlformat-command 'pgformatter)
+;;(setq sqlformat-args '("-s2" "-g"))
+(add-hook 'sql-mode-hook 'sqlformat-on-save-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -54,7 +67,7 @@
  '(initial-scratch-message nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(racket-mode rust-mode flymake-racket jq-format latex-math-preview docker-compose-mode dockerfile-mode latex-preview-pane google-c-style go-mode company lsp-mode toml-mode use-package rainbow-delimiters))
+   '(blacken sqlformat racket-mode rust-mode flymake-racket jq-format latex-math-preview docker-compose-mode dockerfile-mode latex-preview-pane google-c-style go-mode company lsp-mode toml-mode use-package rainbow-delimiters))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 

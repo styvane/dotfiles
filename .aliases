@@ -14,8 +14,8 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Default python to latest version
-alias python3=/usr/local/bin/python$(ls --color=never  /usr/local/bin/python* | awk -F python '$2 ~ /((3\.[8-9])|([4-9]\.[0-9]))$/ {print $2}' | sort -rn | head -1)
-alias python=/usr/local/bin/python$(ls --color=never  /usr/local/bin/python* | awk -F python '$2 ~ /((3\.[8-9])|([4-9]\.[0-9]))$/ {print $2}' | sort -rn | head -1)
+alias python3=/usr/local/bin/python$(ls --color=never  /usr/local/bin/python* | awk -F python '$2 ~ /((3\.[1-9][0-9])|([4-9]\.[0-9]))$/ {print $2}' | sort -rn | head -1)
+alias python=/usr/local/bin/python$(ls --color=never  /usr/local/bin/python* | awk -F python '$2 ~ /((3\.[1-9][0-9])|([4-9]\.[0-9]))$/ {print $2}' | sort -rn | head -1)
 
 # Start emacs without windows
 
