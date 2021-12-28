@@ -12,16 +12,22 @@
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
-  :hook (;;(rust-mode . lsp)
-	 (go-mode . lsp-deferred)))
+  :hook ((rust-mode . lsp)
+         (go-mode . lsp-deferred))
+  :custom
+  (lsp-rust-analyzer-cargo-watch-command "clippy")
+  :config
+  (setq lsp-rust-analyzer-server-command '("~/.cargo/bin/rust-analyzer"))
+  (setq lsp-lens-enable nil)
+  (setq lsp-enable-snippet nil)
+  (setq lsp-headerline-breadcrumb-enable nil))
 
-(setq rust-format-on-save t)
 
-;;(add-hook 'before-save-hook (lambda () (when (eq 'rust-mode major-mode)
-;;					 (lsp-format-buffer))))
+(add-hook 'before-save-hook (lambda () (when (eq 'rust-mode major-mode)
+					 (lsp-format-buffer))))
 
-;;(setq lsp-rust-server 'rust-analyzer)
-;;(setq lsp-rust-analyzer-server-command '("~/.cargo/bin/rust-analyzer"))
+
+
 (setq-default indent-tabs-mode nil)
 (setq column-number-mode t)
 (delete-selection-mode 1)
@@ -35,6 +41,7 @@
 
 ;; formatting hook python-mode
 (add-hook 'python-mode-hook 'blacken-mode)
+
 
 ;; Company mode is a standard completion package that works well with lsp-mode.
 (use-package company
@@ -67,7 +74,7 @@
  '(initial-scratch-message nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(blacken sqlformat racket-mode rust-mode flymake-racket jq-format latex-math-preview docker-compose-mode dockerfile-mode latex-preview-pane google-c-style go-mode company lsp-mode toml-mode use-package rainbow-delimiters))
+   '(blacken sqlformat racket-mode rust-mode jq-format latex-math-preview docker-compose-mode dockerfile-mode latex-preview-pane google-c-style go-mode company lsp-mode toml-mode use-package rainbow-delimiters))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 
