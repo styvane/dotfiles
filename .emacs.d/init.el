@@ -17,31 +17,40 @@
   :custom
   (lsp-rust-analyzer-cargo-watch-command "clippy")
   :config
-  (setq lsp-rust-analyzer-server-command '("~/.cargo/bin/rust-analyzer"))
   (setq lsp-lens-enable nil)
   (setq lsp-enable-snippet nil)
   (setq lsp-headerline-breadcrumb-enable nil))
 
-
 (add-hook 'before-save-hook (lambda () (when (eq 'rust-mode major-mode)
 					 (lsp-format-buffer))))
 
+(add-hook 'before-save-hook (lambda () (when (eq 'go-mode major-mode)
+					 (lsp-format-buffer)
+                                          (lsp-organize-imports))))
+
+(add-hook 'before-save-hook (lambda () (when (eq 'protobuf-mode major-mode)
+					 (clang-format-buffer))))
+
+(add-hook 'before-save-hook (lambda () (when (eq 'c-mode major-mode)
+					 (clang-format-buffer))))
+
+(add-hook 'before-save-hook (lambda () (when (eq 'asm-mode major-mode)
+					 (clang-format-buffer))))
 
 
 (setq-default indent-tabs-mode nil)
 (setq column-number-mode t)
 (delete-selection-mode 1)
 
-;; Set up before-save hooks to format buffer and add/delete imports.
-;; Make sure you don't have other gofmt/goimports hooks enabled.
-(defun lsp-go-install-save-hooks ()
-  (add-hook 'before-save-hook #'lsp-format-buffer t t)
-  (add-hook 'before-save-hook #'lsp-organize-imports t t))
-(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
 ;; formatting hook python-mode
 (add-hook 'python-mode-hook 'blacken-mode)
+(add-hook 'before-save-hook 'py-isort-before-save)
 
+;; Ruff config
+(use-package flymake-ruff
+    :ensure t
+    :hook (python-mode . flymake-ruff-load))
 
 ;; Company mode is a standard completion package that works well with lsp-mode.
 (use-package company
@@ -52,14 +61,19 @@
   (setq company-minimum-prefix-length 1))
 
 ;; C/C++ coding style
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+;; (add-hook 'c-mode-common-hook 'google-set-c-style)
+;; (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 ;; SQL formatter
 
 (setq sqlformat-command 'pgformatter)
 ;;(setq sqlformat-args '("-s2" "-g"))
 (add-hook 'sql-mode-hook 'sqlformat-on-save-mode)
+
+;; Auto insert
+(auto-insert-mode)  ;;; Adds hook to find-files-hook
+;;(setq auto-insert-directory "~/.emacs-templates/") ;;; Or use custom, *NOTE* Trailing slash important
+;;(setq auto-insert-query nil) ;;; If you don't want to be prompted before insertion
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -74,7 +88,7 @@
  '(initial-scratch-message nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(blacken sqlformat racket-mode rust-mode jq-format latex-math-preview docker-compose-mode dockerfile-mode latex-preview-pane google-c-style go-mode company lsp-mode toml-mode use-package rainbow-delimiters))
+   '(py-isort flymake-ruff caml clang-format protobuf-mode blacken sqlformat rust-mode jq-format latex-math-preview docker-compose-mode dockerfile-mode latex-preview-pane google-c-style go-mode company lsp-mode toml-mode use-package rainbow-delimiters))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 
