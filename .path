@@ -24,7 +24,7 @@ export MANPATH="/usr/local/pgsql/share/man:${MANPATH}"
 
 
 # update cdpath
-export CDPATH=${CDPATH}:${HOME}/projects
+export CDPATH="${CDPATH}:${HOME}/projects:${HOME}/Work"
 
 
 # add gnubin for mac
@@ -34,9 +34,10 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}"
 export PATH="/usr/local/opt/gnu-getopt/bin:${PATH}"
 
 # update path for gnu coreutils, make & find on darwin
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
-export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
-export PATH=/usr/local/opt/make/libexec/gnubin:${PATH}
-export MANPATH=/usr/local/opt/make/libexec/gnuman:${MANPATH}
-export PATH=/usr/local/opt/findutils/libexec/gnubin:${PATH}
-export MANPATH=/usr/local/opt/findutils/libexec/gnuman:${MANPATH}
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
+export PATH="/usr/local/opt/make/libexec/gnubin:${PATH}"
+export MANPATH="/usr/local/opt/make/libexec/gnuman:${MANPATH}"
+export PATH="/usr/local/opt/findutils/libexec/gnubin:${PATH}"
+export MANPATH="/usr/local/opt/findutils/libexec/gnuman:${MANPATH}"
+export PATH="/usr/local/opt/libpq/bin:$PATH"

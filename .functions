@@ -225,3 +225,14 @@ o() {
 	open "$@" > /dev/null 2>&1
     fi
 }
+
+# run cargo test multiple times.
+cargo-t() {
+    for i in $(seq 1 20)
+    do
+        cargo t
+        if [ $? -ne 0 ]; then
+            break
+        fi
+    done
+}

@@ -49,6 +49,9 @@ brew install vim
 brew install grep
 brew install openssh
 brew install gmp
+brew install curl
+brew install emacs
+brew install tmux
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 brew install bfg
@@ -66,6 +69,15 @@ brew install p7zip
 brew install rename
 brew install ssh-copy-id
 brew install tree
+brew install pgformatter
+brew install clang-format
+brew install libpq
+
+# Install protobuf
+brew install protobuf
+
+# Install nushell
+brew install nushell
 
 # Remove outdated versions from the cellar.
 brew cleanup
