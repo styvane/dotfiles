@@ -19,7 +19,7 @@ function doIt() {
 		--exclude "apt.sh" \
 		--exclude "firefox.desktop" \
 		--exclude "install.sh" \
-		--exclude "jon-tyson-unsplash.jpg"
+		--exclude "jon-tyson-unsplash.jpg" \
 	        -avh --no-perms . ~;
 	else
 	    rsync --exclude ".git/" \
@@ -31,7 +31,7 @@ function doIt() {
 		--exclude "apt.sh" \
 		--exclude "firefox.desktop" \
 		--exclude "install.sh" \
-		--exclude "jon-tyson-unsplash.jpg"
+		--exclude "jon-tyson-unsplash.jpg" \
 		-avh --no-perms . ~;
 
 	fi
