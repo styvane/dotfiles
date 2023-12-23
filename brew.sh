@@ -72,12 +72,25 @@ brew install tree
 brew install pgformatter
 brew install clang-format
 brew install libpq
+brew install nushell
 
 # Install protobuf
 brew install protobuf
 
-# Install nushell
-brew install nushell
+# Install remarkable
+brew install --cask remarkable
+
+# Install Python tools
+brew install pipx && pipx ensurepath
+pipx install maturin
+pipx install pdm
+
+# Install programming languages compilers and tools.
+brew install llvm
+brew install opam
+brew install racket
+brew install smlnj
+tla-plus-toolbox
 
 # Remove outdated versions from the cellar.
 brew cleanup

@@ -29,11 +29,11 @@ cargo install --force cbindgen \
       cargo-watch \
       cargo-audit \
       cargo-expand \
-      cargo-install-update \
+      cargo--update \
       cargo-tarpaulin \ 
       cargo-insta \
       cargo-sqlx \
-      bunyan-rs
+      bunyan
 
 
 # Install wasmtime

@@ -11,7 +11,3 @@ apt install  xorg x11-apps x11-utils x11-xserver-utils  x11-session-utils
 
 rmmod pcspkr ; echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist.conf
 modprobe -r iwlwifi ; modprobe iwlwifi
-
-
-
-#libc6-dev libjpeg62-turbo libncurses5-dev libpng-dev libtiff5-dev libgif-dev xaw3dg-dev zlib1g-dev libx11-dev
