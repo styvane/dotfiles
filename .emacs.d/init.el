@@ -21,6 +21,28 @@
   (setq lsp-enable-snippet nil)
   (setq lsp-headerline-breadcrumb-enable nil))
 
+(use-package ocamlformat
+  :custom (ocamlformat-enable 'enable-outside-detected-project)
+  :hook (before-save . ocamlformat-before-save)
+  )
+
+
+(use-package eglot
+  :ensure t
+  :config
+  (add-hook 'haskell-mode-hook 'eglot-ensure)
+  :config
+  (setq-default eglot-workspace-configuration
+                '((haskell
+                   (plugin
+                    (stan
+                     (globalOn . :json-false))))))  ;; disable stan
+  :custom
+  (eglot-autoshutdown t)  ;; shutdown language server after closing last file
+  (eglot-confirm-server-initiated-edits nil)  ;; allow edits without confirmation
+)
+
+
 (add-hook 'before-save-hook (lambda () (when (eq 'rust-mode major-mode)
 					 (lsp-format-buffer))))
 
@@ -42,10 +64,8 @@
 (setq column-number-mode t)
 (delete-selection-mode 1)
 
-
 ;; formatting hook python-mode
-(add-hook 'python-mode-hook 'blacken-mode)
-(add-hook 'before-save-hook 'py-isort-before-save)
+(add-hook 'python-mode-hook 'ruff-format-on-save-mode)
 
 ;; Ruff config
 (use-package flymake-ruff
@@ -83,12 +103,12 @@
  '(backup-directory-alist '(("" . "~/.saves")))
  '(blink-cursor-mode nil)
  '(inhibit-default-init t)
- '(inhibit-startup-echo-area-message "styvane")
+ '(inhibit-startup-echo-area-message "0x73656465")
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(py-isort flymake-ruff caml clang-format protobuf-mode blacken sqlformat rust-mode jq-format latex-math-preview docker-compose-mode dockerfile-mode latex-preview-pane google-c-style go-mode company lsp-mode toml-mode use-package rainbow-delimiters))
+   '(ruff-format async-status flymake-ruff caml typescript-mode clang-format protobuf-mode blacken sqlformat racket-mode rust-mode jq-format latex-math-preview docker-compose-mode dockerfile-mode latex-preview-pane google-c-style go-mode company lsp-mode toml-mode use-package rainbow-delimiters))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 
@@ -99,3 +119,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "PfEd")))))
+;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
+;;(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
+;; ## end of OPAM user-setup addition for emacs / base ## keep this line

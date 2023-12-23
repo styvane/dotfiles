@@ -3,6 +3,9 @@
 # update path
 export PATH="/usr/local/bin:${PATH}:/sbin"
 
+# add local path
+export PATH="${HOME}/.local/bin:${PATH}"
+
 # add go path
 export GOPATH="${HOME}/.go"
 export PATH="/usr/local/go/bin:${GOPATH}/bin:${PATH}"
@@ -10,18 +13,14 @@ export PATH="/usr/local/go/bin:${GOPATH}/bin:${PATH}"
 # add rust path
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
-# add poetry path
-export PATH="${HOME}/.poetry/bin:${PATH}"
-
-# add local path
-export PATH="${HOME}/.local/bin:${PATH}"
+# add SML/NJ
+export PATH=/usr/local/smlnj/bin:"$PATH"
 
 # add postgresql path
 export PATH="/usr/local/psgql/bin:${PATH}"
 
 # add postgresql man path
 export MANPATH="/usr/local/pgsql/share/man:${MANPATH}"
-
 
 # update cdpath
 export CDPATH="${CDPATH}:${HOME}/projects:${HOME}/Work"

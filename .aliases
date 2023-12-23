@@ -13,18 +13,12 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
-# Default python to latest version
-# alias python3=/usr/local/bin/python$(ls --color=never  /usr/local/bin/python* | awk -F python '$2 ~ /((3\.[1-9][0-9])|([4-9]\.[0-9]))$/ {print $2}' | sort -rn | head -1)
-# alias python=/usr/local/bin/python$(ls --color=never  /usr/local/bin/python* | awk -F python '$2 ~ /((3\.[1-9][0-9])|([4-9]\.[0-9]))$/ {print $2}' | sort -rn | head -1)
-
-
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias p="cd ~/projects"
 alias g="git"
 alias h="history"
 alias gop="cd ${GOPATH}"
-
 
 # Copy aliases; works  on both macOS and Linux
 pbcopy() {
@@ -45,6 +39,19 @@ pbpaste() {
 }
 
 
+# pdm
+pdm() {
+  local command=$1
+
+  if [[ "$command" == "shell" ]]; then
+      eval $(pdm venv activate)
+  else
+      command pdm $@
+  fi
+}
+
+
+alias latex-code="pdflatex -shell-escape "
 
 # Detect which `ls` flavor is in use
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then # GNU `ls`
@@ -65,7 +72,6 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
-
 alias sl="ls"
 
 # Always enable colored `grep` output
@@ -89,10 +95,16 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 fi
 
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update="brew update; brew upgrade; brew cleanup; rustup self update; rustup update; cleanup; emptytrash"
-alias update-sys="sudo softwareupdate -i -a"
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    # Get macOS tools updates, and update packages.
+    alias update="brew update; brew upgrade; brew cleanup; rustup self update; rustup update; cleanup; emptytrash"
 
+    # Get macOS software update.
+    alias update-sys="sudo softwareupdate -i -a"
+else
+    sudo apt update && sudo apt dist-upgrate
+fi 
+    
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
