@@ -5,14 +5,5 @@ git config --global user.name "$GIT_AUTHOR_NAME"
 GIT_AUTHOR_EMAIL="xxxxxxxxxxxxxxxxxxx"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
-
-# Git global configuration
-git config --global color.diff.meta blue
-git config --global push.default current
-git config --global push.autosetupremote true
-git config --global filter.lfs.clean git-lfs clean -- %f
-git config --global filter.lfs.smudge git-lfs smudge -- %f
-git config --global filter.lfs.process git-lfs filter-process
-git config --global filter.lfs.required true
-git config --global commit.gpgsign true
-git config --global format.signoff false
+GIT_USER_SIGNING_KEY="xxxxxxxxx"
+git config --global user.signingkey "$GIT_USER_SIGNING_KEY"
