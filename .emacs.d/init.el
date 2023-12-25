@@ -43,6 +43,25 @@
 )
 
 
+
+;; Ruff config
+(use-package flymake-ruff
+    :ensure t
+    :hook (python-mode . flymake-ruff-load))
+
+;; Company mode is a standard completion package that works well with lsp-mode.
+(use-package company
+  :ensure t
+  :config
+  ;; Optionally enable completion-as-you-type behavior.
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 1))
+
+
+;; Formatting hook python-mode
+(add-hook 'python-mode-hook 'ruff-format-on-save-mode)
+
+
 (add-hook 'before-save-hook (lambda () (when (eq 'rust-mode major-mode)
 					 (lsp-format-buffer))))
 
@@ -63,22 +82,6 @@
 (setq-default indent-tabs-mode nil)
 (setq column-number-mode t)
 (delete-selection-mode 1)
-
-;; formatting hook python-mode
-(add-hook 'python-mode-hook 'ruff-format-on-save-mode)
-
-;; Ruff config
-(use-package flymake-ruff
-    :ensure t
-    :hook (python-mode . flymake-ruff-load))
-
-;; Company mode is a standard completion package that works well with lsp-mode.
-(use-package company
-  :ensure t
-  :config
-  ;; Optionally enable completion-as-you-type behavior.
-  (setq company-idle-delay 0)
-  (setq company-minimum-prefix-length 1))
 
 ;; C/C++ coding style
 ;; (add-hook 'c-mode-common-hook 'google-set-c-style)
