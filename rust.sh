@@ -22,8 +22,7 @@ rustup target add x86_64-unknown-linux-gnu \
 rustup toolchain install nightly --allow-downgrade --profile minimal --component clippy rust-docs miri
 
 # Install Webassembly tools
-cargo install cargo-component \
-      wit-bindgen \
+cargo install --force cargo-component \
       wasm-tools
 # Wasmtime
 curl https://wasmtime.dev/install.sh -sSf | bash
@@ -39,7 +38,7 @@ cargo install --force cbindgen \
       cargo-update \
       cargo-tarpaulin \ 
       cargo-insta \
-      cargo-sqlx \
+      sqlx-cli \
       bat
 
 
