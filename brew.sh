@@ -27,7 +27,7 @@ brew install bash
 brew install bash-completion2
 
 # Install latex.
-brew cask install mactex
+brew install --cask mactex
 
 # Install jq.
 brew install jq
@@ -88,9 +88,13 @@ pipx install pdm
 # Install programming languages compilers and tools.
 brew install llvm
 brew install opam
-brew install racket
 brew install smlnj
-tla-plus-toolbox
+
+# Install tla+
+brew install --cask tla-plus-toolbox
+
+# Install racket
+brew install --cask racket
 
 # Remove outdated versions from the cellar.
 brew cleanup
