@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 apt install unzip zip \
      build-essential libssl-dev zlib1g-dev libsqlite3-dev libffi-dev tcl-dev libgdbm-dev libreadline-dev tk tk-dev libexpat1-dev libncurses5-dev \

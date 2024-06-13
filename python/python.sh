@@ -1,4 +1,4 @@
-#!/usr/bin/env bashh
+#!/bin/sh
 
 # Install pdm
 curl -sSL https://pdm-project.org/install-pdm.py | python3 -

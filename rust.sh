@@ -24,6 +24,7 @@ rustup toolchain install nightly --allow-downgrade --profile minimal --component
 # Install Webassembly tools
 cargo install --force cargo-component \
       wasm-tools
+
 # Wasmtime
 curl https://wasmtime.dev/install.sh -sSf | bash
 
