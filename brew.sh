@@ -96,5 +96,8 @@ brew install --cask tla-plus-toolbox
 # Install racket
 brew install --cask racket
 
+# Install full latex
+brew install --cask mactex
+
 # Remove outdated versions from the cellar.
 brew cleanup
