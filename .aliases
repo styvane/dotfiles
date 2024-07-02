@@ -174,3 +174,6 @@ alias prikey="more ~/.ssh/id_rsa | pbcopy | echo '=> Private key copied to paste
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# List of every port that any program is listening on, on a Mac
+please lsof -iTCP -sTCP:LISTEN -iUDP -n -P
