@@ -73,6 +73,7 @@ brew install pgformatter
 brew install clang-format
 brew install libpq
 brew install nushell
+brew install markdown
 
 # Install protobuf
 brew install protobuf
