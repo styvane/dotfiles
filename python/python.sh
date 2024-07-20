@@ -1,8 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-# Install pdm
-curl -sSL https://pdm-project.org/install-pdm.py | python3 -
+# Install Rye
 
-python3 -m pip install -U pip \
-    setuptools \
-    maturin
+curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash
