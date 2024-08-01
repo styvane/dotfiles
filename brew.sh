@@ -100,5 +100,8 @@ brew install --cask racket
 # Install full latex
 brew install --cask mactex
 
+# Install Typst
+brew install typst
+
 # Remove outdated versions from the cellar.
 brew cleanup
