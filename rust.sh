@@ -29,11 +29,11 @@ cargo install --force cargo-component \
 curl https://wasmtime.dev/install.sh -sSf | bash
 
 # Install addionnal useful binaries.
-cargo install --force cbindgen \
+cargo install --force --locked cbindgen \
       bunyan \
       cargo-nextest \
+      bacon \
       cargo-udeps \
-      cargo-watch \
       cargo-audit \
       cargo-expand \
       cargo-update \
