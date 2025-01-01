@@ -1,8 +1,8 @@
 #!/usr//bin/env bash
 
 # Enable aliases to be sudo'ed
-alias sudo='sudo '
-alias please='sudo'
+alias sudo="sudo"
+alias please="sudo"
 
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -37,18 +37,6 @@ pbpaste() {
 }
 
 
-# pdm
-pdm() {
-  local command=$1
-
-  if [[ "$command" == "shell" ]]; then
-      eval $(pdm venv activate)
-  else
-      command pdm $@
-  fi
-}
-
-
 alias latex-code="pdflatex -shell-escape "
 
 # Detect which `ls` flavor is in use
@@ -70,7 +58,6 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
-alias sl="ls"
 
 # Always enable colored `grep` output
 alias grep='grep --color=auto'
@@ -98,9 +85,9 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     alias update="brew update; brew upgrade; brew cleanup; rustup self update; rustup update; cleanup; emptytrash"
 
     # Get macOS software update.
-    alias update-sys="sudo softwareupdate -i -a"
+    alias system-update="sudo softwareupdate -i -a"
 else
-    sudo apt update && sudo apt dist-upgrate
+    alias system-update="sudo apt update && sudo apt dist-upgrate"
 fi 
     
 # Stopwatch
@@ -154,17 +141,17 @@ alias hosts='sudo e /etc/hosts'
 alias cwd='pwd | tr -d "\r\n" | pbcopy'
 
 # copy file interactive
-alias cp='cp -i'
+alias cp="cp -i"
 
 # move file interactive
-alias mv='mv -i'
+alias mv="mv -i"
 
 # untar
-alias untar='tar xvf'
+alias untar="tar xvf"
 
 # Merge PDF files, preserving hyperlinks
 # Usage: `mergepdf input{1,2,3}.pdf`
-alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
+alias mergepdf="gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf"
 
 # Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
@@ -173,7 +160,7 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 alias prikey="more ~/.ssh/id_rsa | pbcopy | echo '=> Private key copied to pasteboard.'"
 
 # Print each PATH entry on a separate line
-alias path='echo -e ${PATH//:/\\n}'
+alias path="echo -e ${PATH//:/\\n}"
 
 # List of every port that any program is listening on, on a Mac
-please lsof -iTCP -sTCP:LISTEN -iUDP -n -P
+lports="lsof -iTCP -sTCP:LISTEN -iUDP -n -P"

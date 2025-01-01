@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 # update path
 export PATH="/usr/local/bin:${PATH}:/sbin"
 
@@ -40,3 +41,15 @@ export MANPATH="/usr/local/opt/make/libexec/gnuman:${MANPATH}"
 export PATH="/usr/local/opt/findutils/libexec/gnubin:${PATH}"
 export MANPATH="/usr/local/opt/findutils/libexec/gnuman:${MANPATH}"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# add wasmtime to path
+export PATH="$WASMTIME_HOME/bin:$PATH"
+
+# Add  Rust bins to path
+source "$HOME/.cargo/env"
+
+# Add GHCup path.
+source "$HOME/.ghcup/env" # ghcup-env
+
+# Add Homebrew to path.
+eval "$(/usr/local/bin/brew shellenv)"

@@ -10,13 +10,18 @@ fi
 
 
 # Increase the maximum number of lines contained in the history file
-export HISTSIZE=32768
+export HISTSIZE='32768'
 
 # Increase the maximum number of commands to remember
 export HISTFILESIZE="${HISTSIZE}"
 
 # Ignore duplicate commands in the history
-export HISTCONTROL='ignoreboth'
+export HISTCONTROL="ignoreboth"
+
+
+# Prefer US English and use UTF-8.
+export LANG="en_US.UTF-8";
+export LC_ALL="en_US.UTF-8";
 
 # Make some commands not show up in history
 export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:date:* "
@@ -26,20 +31,20 @@ export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:date:* "
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # Highlight section titles in manual pages.
-export LESS_TERMCAP_md="${yellow}";
+export LESS_TERMCAP_md="${yellow}"
 
 # Don’t clear the screen after quitting a manual page.
-export MANPAGER='less -X';
+export MANPAGER='less -X'
 
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
-export GPG_TTY=$(tty);
+export GPG_TTY=$(tty)
 
 # colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS="error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
-export BASH_SILENCE_DEPRECATION_WARNING=1;
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
-# Rye configuration
-export RYE_NO_AUTO_INSTALL=1
+# Set Wastime home
+export WASMTIME_HOME="$HOME/.wasmtime"

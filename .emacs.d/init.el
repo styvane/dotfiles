@@ -42,12 +42,13 @@
   (eglot-confirm-server-initiated-edits nil)  ;; allow edits without confirmation
 )
 
+;; Ruff configuration
+(add-hook 'python-mode-hook 'eglot-ensure)
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '(python-mode . ("ruff" "server")))
+  (add-hook 'after-save-hook 'eglot-format))
 
-
-;; Ruff config
-(use-package flymake-ruff
-    :ensure t
-    :hook (python-mode . flymake-ruff-load))
 
 ;; Company mode is a standard completion package that works well with lsp-mode.
 (use-package company
@@ -122,6 +123,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "PfEd")))))
-;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
-;;(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
-;; ## end of OPAM user-setup addition for emacs / base ## keep this line
+
