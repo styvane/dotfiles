@@ -20,7 +20,7 @@ alias gop="cd ${GOPATH}"
 
 # Copy aliases; works  on both macOS and Linux
 pbcopy() {
-    if [[ "$OSTYPE" =~ ^darwin ]]; then 
+    if [[ "$OSTYPE" =~ ^darwin ]]; then
 	command pbcopy
     else
 	xclip -selection clipboard
@@ -88,8 +88,8 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     alias system-update="sudo softwareupdate -i -a"
 else
     alias system-update="sudo apt update && sudo apt dist-upgrate"
-fi 
-    
+fi
+
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 

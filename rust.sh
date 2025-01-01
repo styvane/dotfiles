@@ -13,8 +13,8 @@ rustup target add aarch64-linux-android \
      aarch64-apple-ios\
      x86_64-unknown-linux-gnu \
      wasm32-wasip1 \
-     wasm32-wasip2 
-       
+     wasm32-wasip2
+
 
 # Install nightly toolchain
 rustup toolchain install nightly --allow-downgrade --profile minimal --component clippy rust-docs miri
@@ -41,9 +41,7 @@ cargo binstall bacon \
       cargo-semver-checks \
       cargo-udeps \
       cargo-update \
-      cargo-tarpaulin \ 
+      cargo-tarpaulin \
       cbindgen \
       sqlx-cli \
       wasm-tools
-
-

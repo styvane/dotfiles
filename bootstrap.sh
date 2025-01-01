@@ -37,7 +37,7 @@ function doIt() {
 		-avh --no-perms . ~;
 
 	fi
-	
+
 	source ~/.bash_profile;
 }
 

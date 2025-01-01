@@ -7,7 +7,7 @@ apt install unzip zip \
 	 net-tools wget curl git feh sudo emacs fonts-firacode dnsutils sudo
 
 apt install pulseaudio avahi-daemon pavucontrol
-apt install  xorg x11-apps x11-utils x11-xserver-utils  x11-session-utils 
+apt install  xorg x11-apps x11-utils x11-xserver-utils  x11-session-utils
 
 rmmod pcspkr ; echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist.conf
 modprobe -r iwlwifi ; modprobe iwlwifi

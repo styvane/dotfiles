@@ -51,5 +51,8 @@ source "$HOME/.cargo/env"
 # Add GHCup path.
 source "$HOME/.ghcup/env" # ghcup-env
 
-# Add Homebrew to path.
-eval "$(/usr/local/bin/brew shellenv)"
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+	# Add Homebrew to path.
+	eval "$(/opt/local/bin/brew shellenv)";
+fi

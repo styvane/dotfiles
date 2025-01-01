@@ -59,7 +59,7 @@ if type _git &> /dev/null; then
 	complete -o default -o nospace -F _git g;
 fi;
 
- if [[ "$OSTYPE" =~ ^darwin ]]; then 
+ if [[ "$OSTYPE" =~ ^darwin ]]; then
 	# Add tab completion for `defaults read|write NSGlobalDomain`
 	# You could just use `-g` instead, but I like being explicit
 	complete -W "NSGlobalDomain" defaults;
