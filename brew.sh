@@ -1,20 +1,5 @@
 #!/bin/sh
 
-if which brew &> /dev/null; then
-  # Make sure we’re using the latest Homebrew.
-  brew update;
-  # Upgrade any already-installed formulae.
-  brew upgrade;
-else
-  # Install Homebrew
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  # Add Homebrew to path.
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
-	eval "$(/opt/local/bin/brew shellenv)";
-fi
-
-
-
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 

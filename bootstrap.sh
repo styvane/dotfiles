@@ -5,7 +5,6 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin main;
 
 function doIt() {
-	./install.sh;
     if [[ "$OSTYPE" =~ ^darwin ]]; then
 	    rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
@@ -38,9 +37,8 @@ function doIt() {
 		-avh --no-perms . ~;
 
 	fi
-
+	./install.sh;
 	source ~/.bash_profile;
-	./install_rs.sh
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

@@ -9,6 +9,9 @@ else
     ./apt.sh
 fi
 
+# Install Rust toolchains and bins
+./install_rs.sh
+
 # Install GHc
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
