@@ -1,0 +1,42 @@
+{
+    "editor.fontFamily": "'MonoLisa Variable', Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": "'ss02' on",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
+    "editor.fontSize": 16,
+    "editor.fontWeight": 450,
+    "editor.fontVariations": true,
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "window.autoDetectHighContrast": false,
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+    "workbench.preferredHighContrastColorTheme": "Visual Studio Dark",
+    "workbench.preferredLightColorTheme": "Visual Studio Light",
+    "terminal.external.osxExec": "Alacritty",
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.fontSize": 14,
+    "telemetry.telemetryLevel": "off",
+    "editor.accessibilitySupport": "off",
+    "rust-analyzer.check.command": "clippy",
+    "editor.formatOnSave": true,
+    "github-actions.remote-name": "main",
+    "[github-actions-workflow]": {
+        "editor.indentSize": 2
+    },
+    "workbench.colorTheme": "GitHub Light"
+}
