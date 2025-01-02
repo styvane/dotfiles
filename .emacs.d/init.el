@@ -58,11 +58,6 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 1))
 
-
-;; Formatting hook python-mode
-(add-hook 'python-mode-hook 'ruff-format-on-save-mode)
-
-
 (add-hook 'before-save-hook (lambda () (when (eq 'rust-mode major-mode)
 					 (lsp-format-buffer))))
 
