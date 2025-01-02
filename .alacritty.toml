@@ -8,6 +8,7 @@ EDITOR = "emacs"
 [window]
 dimensions = { columns = 100, lines = 50 }
 padding = { x = 13, y = 13 }
+startup_mode = "Maximized"
 decorations_theme_variant = "Dark"
 decorations = "Transparent"
 option_as_alt = "Both"
