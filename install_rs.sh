@@ -33,7 +33,7 @@ cargo binstall bacon \
       bat \
       bunyan \
       cargo-audit \
-      cargo-audidatble \
+      cargo-audidable \
       cargo-component \
       cargo-deny \
       cargo-expand \
