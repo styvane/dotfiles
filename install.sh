@@ -24,10 +24,10 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 # Install pre-commit
 uv tool install pre-commit
 
-alacritty_theme_dir="$HOME/.config/alacritty/themes"
+ALACRITTY_THEMES_DIR="$HOME/.config/alacritty/themes"
 
-if [ ! -d "$alacritty_theme_dir" ]; then
+if [ ! -d "$ALACRITTY_THEMES_DIR" ]; then
     # Install Alacritty themes
-    mkdir -p ~/.config/alacritty/themes;
-    git clone https://github.com/alacritty/alacritty-theme "$alacritty_theme_dir";
+    mkdir -p "$ALACRITTY_THEMES_DIR";
+    git clone https://github.com/alacritty/alacritty-theme "$ALACRITTY_THEMES_DIR";
 fi
