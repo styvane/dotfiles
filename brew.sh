@@ -1,9 +1,10 @@
 #!/bin/sh
 
+
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# Install command-line tools using Homebrew.
 
+# Install command-line tools using Homebrew.
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -83,9 +84,6 @@ brew install protobuf
 # Install remarkable
 brew install --cask remarkable
 
-# Install iterm2
-brew install --cask iterm2
-
 # Install programming languages compilers and tools.
 brew install llvm
 brew install opam
@@ -95,7 +93,7 @@ brew install --cask tla-plus-toolbox
 
 
 # Install smlnj
-brew install --cask smlnj
+# brew install --cask smlnj
 
 # Install racket
 brew install --cask racket
