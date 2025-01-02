@@ -192,35 +192,6 @@ function o() {
     fi
 }
 
-# UTF-8-encode a string of Unicode symbols
-function escape() {
-	local args
-	mapfile -t args < <(printf "%s" "$*" | xxd -p -c1 -u)
-	printf "\\\\x%s" "${args[@]}"
-	# print a newline unless we’re piping the output to another program
-	if [ -t 1 ]; then
-		echo ""; # newline
-	fi
-}
-
-# Decode \x{ABCD}-style Unicode escape sequences
-function unidecode() {
-	perl -e "binmode(STDOUT, ':utf8'); print \"$*\""
-	# print a newline unless we’re piping the output to another program
-	if [ -t 1 ]; then
-		echo ""; # newline
-	fi
-}
-
-# Get a character’s Unicode code point
-function codepoint() {
-	perl -e "use utf8; print sprintf('U+%04X', ord(\"$*\"))"
-	# print a newline unless we’re piping the output to another program
-	if [ -t 1 ]; then
-		echo ""; # newline
-	fi
-}
-
 # Call from a local repo to open the repository on github/bitbucket in browser
 # Modified version of https://github.com/zeke/ghwd
 function repo() {
