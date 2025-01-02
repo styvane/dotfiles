@@ -5,7 +5,8 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin main;
 
 function doIt() {
-        if [[ "$OSTYPE" =~ ^darwin ]]; then
+	./install.sh;
+    if [[ "$OSTYPE" =~ ^darwin ]]; then
 	    rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
 		--exclude "bootstrap.sh" \
@@ -38,7 +39,6 @@ function doIt() {
 
 	fi
 
-	./install.sh;
 	source ~/.bash_profile;
 	./install_rs.sh
 }
