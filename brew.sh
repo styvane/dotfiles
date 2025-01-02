@@ -1,15 +1,18 @@
 #!/bin/sh
 
+if which brew &> /dev/null; then
+  # Make sure we’re using the latest Homebrew.
+  brew update;
+  # Upgrade any already-installed formulae.
+  brew upgrade;
+else
+  # Install Homebrew
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # Add Homebrew to path.
+	eval "$(/opt/local/bin/brew shellenv)";
+fi
 
-# Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Install command-line tools using Homebrew.
-# Make sure we’re using the latest Homebrew.
-brew update
-
-# Upgrade any already-installed formulae.
-brew upgrade
 
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
@@ -32,8 +35,8 @@ brew install bash-completion2
 # Install latex.
 brew install --cask mactex
 
-# Install jq.
-brew install jq
+# Install JSON tools
+brew install jq, gron
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -50,10 +53,22 @@ brew install gnupg
 # Install more recent versions of some macOS tools.
 brew install vim
 brew install grep
+brew install nano
 brew install openssh
 brew install gmp
 brew install curl
-brew install emacs
+
+# better `top`
+brew install bottom
+
+# Install emacs
+brew install --cask emacs
+
+
+# Install better terminal
+brew install --cask alacritty
+
+# Install tmux
 brew install tmux
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
