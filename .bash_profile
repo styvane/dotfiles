@@ -1,8 +1,3 @@
-#!/bin/env sh
-
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
