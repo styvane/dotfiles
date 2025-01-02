@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # Install rustup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh --  -y --no-modify-path
 
 # Install additional components
 rustup component add llvm-tools
@@ -18,6 +18,9 @@ rustup target add aarch64-linux-android \
 
 # Install nightly toolchain
 rustup toolchain install nightly --allow-downgrade --profile minimal --component clippy rust-docs miri
+
+# Bash completion for rust toolchains
+rustup completions bash > $(brew --prefix)/etc/bash_completion.d/rustup.bash-completion
 
 # Install cargo-binstall
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
