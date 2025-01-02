@@ -40,6 +40,7 @@ function doIt() {
 
 	./install.sh;
 	source ~/.bash_profile;
+	./install_rs.sh
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
