@@ -38,6 +38,7 @@ function doIt() {
 
 	fi
 
+	./install;
 	source ~/.bash_profile;
 }
 
