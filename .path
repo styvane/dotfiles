@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # update path
 export PATH="/usr/local/bin:${PATH}:/sbin"
