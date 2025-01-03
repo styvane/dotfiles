@@ -160,7 +160,7 @@ alias prikey="more ~/.ssh/id_rsa | pbcopy | echo '=> Private key copied to paste
 alias path="echo -e ${PATH//:/\\n}"
 
 # List of every port that any program is listening on, on a Mac
-lports="lsof -iTCP -sTCP:LISTEN -iUDP -n -P"
+alias lsport="lsof -iTCP -sTCP:LISTEN -iUDP -n -P"
 
 # Better `top`
 alias top="btm"
