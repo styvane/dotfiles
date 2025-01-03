@@ -1,8 +1,8 @@
 #!/usr//bin/env bash
 
 # Enable aliases to be sudo'ed
-alias sudo="sudo "
-alias please="sudo"
+alias sudo='sudo '
+alias please='sudo'
 
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -63,9 +63,6 @@ alias ls="command ls ${colorflag}"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
 
 # Get week number
 alias week='date +%V'
@@ -165,4 +162,5 @@ alias path="echo -e ${PATH//:/\\n}"
 # List of every port that any program is listening on, on a Mac
 lports="lsof -iTCP -sTCP:LISTEN -iUDP -n -P"
 
+# Better `top`
 alias top="btm"
