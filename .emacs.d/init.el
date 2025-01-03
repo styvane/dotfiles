@@ -13,7 +13,12 @@
   :ensure t
   :commands (lsp lsp-deferred)
   :hook ((rust-mode . lsp)
-         (go-mode . lsp-deferred))
+         (go-mode . lsp-deferred)
+         (python-mode . flymake-ruff-load)
+         (yaml-mode-hook . flymake-yaml-load)
+         (haskell-mode . lsp)
+         (haskell-literate-mode . lsp)
+
   :custom
   (lsp-rust-analyzer-cargo-watch-command "clippy")
   :config
@@ -23,31 +28,7 @@
 
 (use-package ocamlformat
   :custom (ocamlformat-enable 'enable-outside-detected-project)
-  :hook (before-save . ocamlformat-before-save)
-  )
-
-
-(use-package eglot
-  :ensure t
-  :config
-  (add-hook 'haskell-mode-hook 'eglot-ensure)
-  :config
-  (setq-default eglot-workspace-configuration
-                '((haskell
-                   (plugin
-                    (stan
-                     (globalOn . :json-false))))))  ;; disable stan
-  :custom
-  (eglot-autoshutdown t)  ;; shutdown language server after closing last file
-  (eglot-confirm-server-initiated-edits nil)  ;; allow edits without confirmation
-)
-
-;; Ruff configuration
-(add-hook 'python-mode-hook 'eglot-ensure)
-(with-eval-after-load 'eglot
-  (add-to-list 'eglot-server-programs
-               '(python-mode . ("ruff" "server")))
-  (add-hook 'after-save-hook 'eglot-format))
+  :hook (before-save . ocamlformat-before-save))
 
 
 ;; Company mode is a standard completion package that works well with lsp-mode.
