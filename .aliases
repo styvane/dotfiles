@@ -1,7 +1,7 @@
 #!/usr//bin/env bash
 
 # Enable aliases to be sudo'ed
-alias sudo="sudo"
+alias sudo="sudo "
 alias please="sudo"
 
 
@@ -19,7 +19,7 @@ alias h="history"
 alias gop="cd ${GOPATH}"
 
 # Copy aliases; works  on both macOS and Linux
-pbcopy() {
+function pbcopy() {
     if [[ "$OSTYPE" =~ ^darwin ]]; then
 	command pbcopy
     else
@@ -28,7 +28,7 @@ pbcopy() {
 }
 
 
-pbpaste() {
+function pbpaste() {
     if [[ "$OSTYPE" =~ ^darwin ]]; then
 	command pbpaste
     else
@@ -164,3 +164,5 @@ alias path="echo -e ${PATH//:/\\n}"
 
 # List of every port that any program is listening on, on a Mac
 lports="lsof -iTCP -sTCP:LISTEN -iUDP -n -P"
+
+alias top="btm"
