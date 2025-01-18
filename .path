@@ -13,6 +13,8 @@ export PATH="/usr/local/go/bin:${GOPATH}/bin:${PATH}"
 # add rust path
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
+# update cdpath
+export CDPATH="${CDPATH}:${HOME}/labs:${HOME}/projects:${HOME}/contrib"
 
 # add wasmtime to path
 export PATH="$WASMTIME_HOME/bin:$PATH"
@@ -29,6 +31,6 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)";
     for path in $(brew --prefix)/opt/*
     do
-        PATH="${file}/bin:${PATH}";
+        PATH="${path}/bin:${PATH}";
     done
 fi
