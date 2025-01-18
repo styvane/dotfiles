@@ -47,4 +47,5 @@ cargo binstall bacon \
       cargo-tarpaulin \
       cbindgen \
       sqlx-cli \
-      wasm-tools
+      wasm-tools \
+      tokio-console --lang en_US.UTF-8
