@@ -12,11 +12,13 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Shortcuts
-alias dl="cd ~/Downloads"
-alias p="cd ~/projects"
+alias dl="cd ${HOME}/Downloads"
+alias p="cd ${HOME}/Projects"
 alias g="git"
 alias h="history"
 alias gop="cd ${GOPATH}"
+alias lab="cd ${HOME}/Labs"
+alias contrib="cd ${HOME}/Contrib"
 
 # Copy aliases; works  on both macOS and Linux
 function pbcopy() {
