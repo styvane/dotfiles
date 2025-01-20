@@ -38,12 +38,12 @@ brew install wget
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim
-brew install grep
-brew install nano
-brew install openssh
-brew install gmp
-brew install curl
+brew vim \
+     grep \
+     nano \
+     openssh \
+     gmp \
+     curl
 
 # better `top`
 brew install bottom
@@ -59,26 +59,27 @@ brew install --cask alacritty
 brew install tmux
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install bfg
-brew install binutils
-brew install binwalk
-brew install nmap
-brew install xz
+brew bfg \
+     binutils \
+     binwalk \
+     nmap \
+     xz
 
 # Install other useful binaries.
-brew install git
-brew install git-lfs
-brew install gs
-brew install lua
-brew install p7zip
-brew install rename
-brew install ssh-copy-id
-brew install tree
-brew install pgformatter
-brew install clang-format
-brew install libpq
-brew install nushell
-brew install markdown
+brew install git \
+     git-lfs \
+     gs \
+     lua \
+     p7zip \
+     rename \
+     ssh-copy-id \
+     tree \
+     pgformatter \
+     clang-format \
+     libpq \
+     nushell \
+     markdown \
+     cmake
 
 # Install protobuf
 brew install protobuf
@@ -105,6 +106,9 @@ brew install --cask mactex
 
 # Install Typst
 brew install typst
+
+# Install zig
+brew install zig
 
 # Remove outdated versions from the cellar.
 brew cleanup
