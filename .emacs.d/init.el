@@ -14,10 +14,9 @@
   :commands (lsp lsp-deferred)
   :hook ((rust-mode . lsp)
          (go-mode . lsp-deferred)
-         (python-mode . flymake-ruff-load)
-         (yaml-mode-hook . flymake-yaml-load)
+         (yaml-mode . flymake-yaml-load)
          (haskell-mode . lsp)
-         (haskell-literate-mode . lsp)
+         (haskell-literate-mode . lsp))
 
   :custom
   (lsp-rust-analyzer-cargo-watch-command "clippy")
@@ -31,6 +30,28 @@
   :hook (before-save . ocamlformat-before-save))
 
 
+;; Ruff config
+(use-package flymake-ruff
+    :ensure t
+    :hook ((python-mode . flymake-ruff-load)
+           ;; Formatting hook python-mode
+           (python-mode . ruff-format-on-save-mode)))
+
+(use-package eglot
+  :ensure t
+  :config
+  :hook(haskell-mode . eglot-ensure)
+  :config
+  (setq-default eglot-workspace-configuration
+                '((haskell
+                   (plugin
+                    (stan
+                     (globalOn . :json-false))))))  ;; disable stan
+  :custom
+  (eglot-autoshutdown t)  ;; shutdown language server after closing last file
+  (eglot-confirm-server-initiated-edits nil)  ;; allow edits without confirmation
+)
+
 ;; Company mode is a standard completion package that works well with lsp-mode.
 (use-package company
   :ensure t
@@ -39,18 +60,19 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 1))
 
+(use-package clang-format
+  :commands (clang-format-buffer clang-format-on-save-mode)
+  :hook (c-mode c++-mode protobuf-mode)
+  :config
+  (setq clang-format-fallback-style '"llvm")
+  (clang-format-on-save-mode))
+
 (add-hook 'before-save-hook (lambda () (when (eq 'rust-mode major-mode)
 					 (lsp-format-buffer))))
 
 (add-hook 'before-save-hook (lambda () (when (eq 'go-mode major-mode)
 					 (lsp-format-buffer)
                                           (lsp-organize-imports))))
-
-(add-hook 'before-save-hook (lambda () (when (eq 'protobuf-mode major-mode)
-					 (clang-format-buffer))))
-
-(add-hook 'before-save-hook (lambda () (when (eq 'c-mode major-mode)
-					 (clang-format-buffer))))
 
 (add-hook 'before-save-hook (lambda () (when (eq 'asm-mode major-mode)
 					 (clang-format-buffer))))
@@ -60,12 +82,7 @@
 (setq column-number-mode t)
 (delete-selection-mode 1)
 
-;; C/C++ coding style
-;; (add-hook 'c-mode-common-hook 'google-set-c-style)
-;; (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-
 ;; SQL formatter
-
 (setq sqlformat-command 'pgformatter)
 ;;(setq sqlformat-args '("-s2" "-g"))
 (add-hook 'sql-mode-hook 'sqlformat-on-save-mode)
@@ -82,13 +99,14 @@
  ;; If there is more than one, they won't work right.
  '(backup-directory-alist '(("" . "~/.saves")))
  '(blink-cursor-mode nil)
+ '(eglot-confirm-server-edits nil nil nil "Customized with use-package eglot")
  '(inhibit-default-init t)
  '(inhibit-startup-echo-area-message "0x73656465")
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(ruff-format async-status flymake-ruff caml typescript-mode clang-format protobuf-mode blacken sqlformat racket-mode rust-mode jq-format latex-math-preview docker-compose-mode dockerfile-mode latex-preview-pane google-c-style go-mode company lsp-mode toml-mode use-package rainbow-delimiters))
+   '(clang-format ruff-format flymake-yaml lsp-haskell ocamlformat eglot json-mode flymake-ruff caml typescript-mode protobuf-mode sqlformat racket-mode rust-mode jq-format latex-math-preview docker-compose-mode dockerfile-mode latex-preview-pane go-mode company lsp-mode toml-mode use-package rainbow-delimiters))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 
