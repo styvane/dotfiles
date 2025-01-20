@@ -164,5 +164,7 @@ alias path="echo -e ${PATH//:/\\n}"
 # List of every port that any program is listening on, on a Mac
 alias lsport="lsof -iTCP -sTCP:LISTEN -iUDP -n -P"
 
+# Run ruff tool using uv
+alias ruff='uv run ruff '
 # Better `top`
 alias top="btm"
