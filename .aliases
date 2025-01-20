@@ -81,7 +81,7 @@ fi
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
     # Get macOS tools updates, and update packages.
-    alias update="brew update; brew upgrade; brew cleanup; rustup self update; rustup update; uv self update; uv tool update --all; cleanup; emptytrash"
+    alias update="brew update; brew upgrade; brew cleanup; rustup self update; rustup update; uv self update; uv tool update --all; cargo install-update --all; cleanup; emptytrash"
 
     # Get macOS software update.
     alias system-update="sudo softwareupdate -i -a"
