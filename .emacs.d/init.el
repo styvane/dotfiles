@@ -16,8 +16,11 @@
    :ensure t
    :commands (lsp lsp-deferred)
    :hook ((go-mode . lsp-deferred)
+          (go-mode . go-fmt-before-save)
+          (go-mode . lsp-organize-imports)
           ;;(yaml-mode . flymake-yaml-load)
           ;;(haskell-mode . lsp)
+
           (zig-mode . lsp))
           ;;(haskell-literate-mode . lsp))
    ;;:custom
@@ -27,6 +30,7 @@
    (setq lsp-enable-snippet nil)
    (setq lsp-headerline-breadcrumb-enable nil))
 
+;; Rustic configuration
 (use-package rustic
   :ensure t
   :config
@@ -35,13 +39,16 @@
   (rustic-cargo-use-last-stored-arguments t)
   (rustic-format-trigger 'on-save))
 
+;; Ocaml formatting configuration
 (use-package ocamlformat
   :custom (ocamlformat-enable 'enable-outside-detected-project)
   :hook (before-save . ocamlformat-before-save))
 
+;; Ruff configuration
 (use-package flymake-ruff
   :hook (python-mode . flymake-ruff-load))
 
+;; Ruff formatting configuration
 (use-package ruff-format
   :hook (python-mode . ruff-format-on-save-mode))
 
@@ -53,23 +60,26 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 1))
 
+;; Clang Format configuration
 (use-package clang-format
   :commands (clang-format-buffer clang-format-on-save-mode)
   :hook (asm-mode c-mode c++-mode protobuf-mode)
   :config
   (setq clang-format-fallback-style '"llvm"))
 
-(use-package go-mode
-  :after (lsp-mode)
-  :config
-  (go-fmt-before-save)
-  (lsp-organize-imports))
-
 ;; SQL formatter
 (use-package sqlformat
   :config
   (setq sqlformat-command 'pgformatter)
   (add-hook 'sql-mode-hook 'sqlformat-on-save-mode))
+
+;; YAML mode configuration
+(use-package yaml-mode
+   :config
+   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+
+;; TOML mode configuration
+(use-package toml-mode :ensure t)
 
 (setq-default indent-tabs-mode nil)
 (setq column-number-mode t)
@@ -94,7 +104,7 @@
  '(initial-scratch-message nil)
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(flymake-ruff ruff-format clang-format rustic sqlformat zig-mode company go-mode rainbow-delimiters lsp-mode))
+   '(ocamlformat toml-mode yaml-mode smlfmt flymake-ruff ruff-format clang-format rustic sqlformat zig-mode company go-mode rainbow-delimiters lsp-mode))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 
