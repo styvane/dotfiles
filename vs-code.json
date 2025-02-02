@@ -38,5 +38,6 @@
     "[github-actions-workflow]": {
         "editor.indentSize": 2
     },
-    "workbench.colorTheme": "GitHub Light"
+    "workbench.colorTheme": "Night Owl Light",
+    "workbench.iconTheme": "material-icon-theme"
 }

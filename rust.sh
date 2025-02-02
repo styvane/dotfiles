@@ -28,8 +28,9 @@ curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-
 # Install Wasmtime
 curl https://wasmtime.dev/install.sh -sSf | bash
 
-# Install addionnal useful binaries.
-cargo binstall bacon \
+# Install additional useful binaries.
+cargo binstall --locked --no-confirm \
+      bacon \
       bat \
       bunyan \
       cargo-audit \
@@ -38,7 +39,7 @@ cargo binstall bacon \
       cargo-deny \
       cargo-expand \
       cargo-insta \
-      maturin \
+      cargo-make \
       cargo-mutants \
       cargo-nextest \
       cargo-semver-checks \
@@ -46,6 +47,13 @@ cargo binstall bacon \
       cargo-update \
       cargo-tarpaulin \
       cbindgen \
+      eza \
+      maturin \
       sqlx-cli \
+      tokio-console \
+      wash-cli \
       wasm-tools \
-      tokio-console --lang en_US.UTF-8
+      wkg
+
+# Install additional useful binaries with features
+cargo install --locked taplo-cli --features lsp

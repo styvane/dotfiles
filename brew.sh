@@ -96,7 +96,8 @@ brew install --cask tla-plus-toolbox
 
 
 # Install smlnj
-# brew install --cask smlnj
+brew install --cask smlnj
+brew install smlfmt
 
 # Install racket
 brew install --cask racket
