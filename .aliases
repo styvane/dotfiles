@@ -41,7 +41,7 @@ function pbpaste() {
 alias latex-code="pdflatex -shell-escape "
 
 alias eza='eza --group-directories-first --sort=extension '
-alias ls='eza '
+alias ls='eza -F '
 
 # List all files colorized in long format
 alias l='eza -lF'
@@ -50,7 +50,6 @@ alias l='eza -lF'
 alias la='eza -lAF'
 
 alias lt='eza -lT'
-
 
 # List only directories
 alias lsd='eza -D'
