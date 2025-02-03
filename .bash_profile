@@ -1,6 +1,6 @@
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{path,exports,aliases,functions,extra,bash_prompt}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"

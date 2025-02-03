@@ -50,6 +50,7 @@ cargo binstall --locked --no-confirm \
       eza \
       maturin \
       sqlx-cli \
+      starship \
       tokio-console \
       wash-cli \
       wasm-tools \
