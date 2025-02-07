@@ -108,8 +108,9 @@ brew install --cask mactex
 # Install Typst
 brew install typst
 
-# Install zig
+# Install zig and tools
 brew install zig
+brew install zls
 
 # Remove outdated versions from the cellar.
 brew cleanup
