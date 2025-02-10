@@ -53,7 +53,7 @@ brew install --cask emacs
 
 
 # Install better terminal
-brew install --cask alacritty
+brew install --cask ghostty
 
 # Install tmux
 brew install tmux
@@ -79,7 +79,8 @@ brew install git \
      libpq \
      nushell \
      markdown \
-     cmake
+     cmake \
+     fzf \
 
 # Install protobuf
 brew install protobuf

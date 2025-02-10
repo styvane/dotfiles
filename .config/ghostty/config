@@ -1,0 +1,26 @@
+theme = "light:OneHalfLight,dark:Monokai Pro Light"
+
+# Set font parameters.
+font-family = ""
+font-family = "Monolisa Variable"
+font-size = 13
+font-style = "semibold"
+
+# Remove window title
+title = " "
+
+# Set window height to 40 and width to 140
+window-height = 40
+window-width = 140
+
+# Set window padding to 13
+window-padding-x = 13
+window-padding-y = 13
+
+# Quit after the last surface is closed
+quit-after-last-window-closed = true
+
+# Put terminal in center on startup
+quick-terminal-position = center
+
+cursor-style-blink = false

@@ -73,7 +73,7 @@ alias ruff='uv run ruff '
 alias top='btm'
 
 # Better `cat`
-alias cat='bat'
+alias cat='bat --paging=never --style "changes,rule,snip"'
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
     # Recursively delete `.DS_Store` files

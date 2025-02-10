@@ -5,7 +5,9 @@ export EDITOR="emacs"
 
 # Make urxvt default terminal on linux
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then
-    export TERM="rxvt-unicode-256color"
+    export TERM="rxvt-unicode-256color";
+else
+    export TERM="xterm-ghostty";
 fi
 
 
