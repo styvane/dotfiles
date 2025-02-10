@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-STARSHIP_CONFIG="${HOME}/.config/starship.toml"
+STARSHIP_CONFIG="${HOME}/.config/starship/starship.toml"
 export STARSHIP_CONFIG
 eval "$(starship init bash)"

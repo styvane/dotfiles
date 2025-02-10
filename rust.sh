@@ -48,6 +48,7 @@ cargo binstall --locked --no-confirm \
       cargo-tarpaulin \
       cbindgen \
       eza \
+      git-delta \
       maturin \
       sqlx-cli \
       starship \

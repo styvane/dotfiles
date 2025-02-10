@@ -40,15 +40,19 @@ function pbpaste() {
 
 alias latex-code="pdflatex -shell-escape "
 
+# Show directories first and sort files by extension.
 alias eza='eza --group-directories-first --sort=extension '
+
+# Always display type
 alias ls='eza -F '
 
-# List all files colorized in long format
+# List all files in long format
 alias l='eza -lF'
 
-# List all files colorized in long format, excluding . and ..
+# List all files in long format, excluding . and ..
 alias la='eza -lAF'
 
+# List files as tree
 alias lt='eza -lT'
 
 # List only directories
@@ -61,6 +65,15 @@ alias egrep='egrep --color=auto'
 
 # Get week number
 alias week='date +%V'
+
+# Run ruff tool using uv
+alias ruff='uv run ruff '
+
+# Better `top`
+alias top='btm'
+
+# Better `cat`
+alias cat='bat'
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
     # Recursively delete `.DS_Store` files
@@ -156,8 +169,3 @@ alias path="echo -e ${PATH//:/\\n}"
 
 # List of every port that any program is listening on, on a Mac
 alias lsport="lsof -iTCP -sTCP:LISTEN -iUDP -n -P"
-
-# Run ruff tool using uv
-alias ruff='uv run ruff '
-# Better `top`
-alias top="btm"

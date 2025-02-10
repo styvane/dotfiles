@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/themes/themes/github_light.toml"]
+import = ["~/.config/alacritty/themes/themes/night_owlish_light.toml"]
 
 [env]
 TERM = "xterm-256color"

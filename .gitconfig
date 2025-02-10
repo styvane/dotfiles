@@ -2,49 +2,49 @@
 	defaultBranch = main
 
 [push]
-
 	default = current
        	autosetupremote = true
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
 [branch]
-
 	# Show most recently changed branches first.
 	sort = -committerdate
 
 [commit]
-
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = true
 
 [diff]
-
 	# Detect copies as well as renames.
 	renames = copies
 
-[diff "bin"]
+        # Detect moved block by default
+        colorMoved = default
 
+[diff "bin"]
 	# Use `hexdump` to diff binary files.
 	textconv = hexdump -v -C
 
 [merge]
-
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
+        # Use zdiff3 conflict style
+        conflictstyle = zdiff3
 
 [filter "lfs"]
+        # Large FS configuration
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 
 [format]
+        # Do not add sign off by by default.
 	signoff = false
 
 [alias]
-
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
@@ -112,7 +112,6 @@
 	whoami = config user.email
 
 [apply]
-
 	# Detect whitespace errors when applying a patch.
 	whitespace = fix
 
@@ -134,33 +133,45 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
-[color "branch"]
+        # Set pager
+        pager = delta
 
+[interactive]
+        # Diff filter setting
+        diffFilter = delta --color-only
+
+[delta]
+    # use n and N to move between diff sections
+    navigate = true
+    line-numbers = true
+    # hyperlinks = true
+    side-by-side = true
+
+
+[color "branch"]
+        # Set branch colors.
 	current = magenta reverse
 	local = magenta
 	remote = green
 
 [color "diff"]
-
+        # Set diff mode colors
 	meta = blue bold
 	frag = magenta bold # line info
 	old = red # deletions
 	new = green # additions
 
 [color "status"]
-
+        # Set status colors
 	added = yellow bold
 	changed = green
 	untracked = cyan
 
-
 [help]
-
 	# Automatically correct and execute mistyped commands.
 	autocorrect = 1
 
 # URL shorthands
-
 [url "git@github.com:"]
 
 	insteadOf = "gh:"
