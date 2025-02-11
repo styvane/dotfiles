@@ -23,7 +23,7 @@ brew install bash-completion2
 brew install --cask mactex
 
 # Install JSON tools
-brew install jq gron
+brew install gron jq
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
@@ -38,12 +38,13 @@ brew install wget
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew vim \
+brew curl \
+     gmp \
      grep \
      nano \
      openssh \
-     gmp \
-     curl
+     vim
+
 
 # better `top`
 brew install bottom
@@ -66,21 +67,21 @@ brew bfg \
      xz
 
 # Install other useful binaries.
-brew install git \
-     git-lfs \
-     gs \
-     lua \
-     p7zip \
-     rename \
-     ssh-copy-id \
-     tree \
-     pgformatter \
-     clang-format \
-     libpq \
-     nushell \
-     markdown \
+brew install clang-format \
      cmake \
      fzf \
+     git \
+     git-lfs \
+     gs \
+     libpq \
+     lua \
+     markdown \
+     nushell \
+     pgformatter \
+     p7zip \
+     rename \
+     ssh-copy-id
+
 
 # Install protobuf
 brew install protobuf
@@ -102,9 +103,6 @@ brew install smlfmt
 
 # Install racket
 brew install --cask racket
-
-# Install full latex
-brew install --cask mactex
 
 # Install Typst
 brew install typst
