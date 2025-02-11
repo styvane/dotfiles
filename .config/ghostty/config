@@ -14,8 +14,8 @@ title = " "
 window-height = 40
 window-width = 200
 # Set window padding to 13
-window-padding-x = 13
-window-padding-y = 16
+window-padding-x = 15
+window-padding-y = 17
 # Extends window color
 window-padding-color = extend
 
@@ -46,11 +46,11 @@ clipboard-trim-trailing-spaces = true
 copy-on-select = true
 
 # Rebind horizontal and vertical split keys
-keybind = ctrl+a>v=new_split:right
-keybind = ctrl+a>-=new_split:down
+keybind = ctrl+b>v=new_split:right
+keybind = ctrl+b>-=new_split:down
 keybind = cmd+d=unbind
 keybind = shift+cmd+d=unbind
 
-# Make `Ctrl+A R` reload the config file
-keybind = ctrl+a>r=reload_config
+# Make `Ctrl+B R` reload the config file
+keybind = ctrl+b>r=reload_config
 keybind = shift+cmd+,=unbind
