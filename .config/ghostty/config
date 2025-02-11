@@ -3,7 +3,7 @@ theme = "light:OneHalfLight,dark:Monokai Pro Light"
 # Set font parameters.
 font-family = ""
 font-family = "Monolisa Variable"
-font-size = 13
+font-size = 14
 font-style = "semibold"
 
 # Remove window title
@@ -23,4 +23,8 @@ quit-after-last-window-closed = true
 # Put terminal in center on startup
 quick-terminal-position = center
 
+# Disable cursor blinking
 cursor-style-blink = false
+
+# Do not blur unfocused split
+unfocused-split-opacity = 1
