@@ -48,3 +48,5 @@ copy-on-select = true
 # Rebind horizontal and vertical split keys
 keybind = ctrl+a>v=new_split:right
 keybind = ctrl+a>-=new_split:down
+keybind = cmd+d=unbind
+keybind = shift+cmd+d=unbind
