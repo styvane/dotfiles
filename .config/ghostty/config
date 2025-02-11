@@ -3,8 +3,9 @@ theme = "light:OneHalfLight,dark:Monokai Pro Light"
 # Set font parameters.
 font-family = ""
 font-family = "Monolisa Variable"
+font-feature = zero ss02 on
 font-size = 14
-font-style = "semibold"
+font-style = SemiBold
 
 # Remove window title
 title = " "
@@ -12,19 +13,38 @@ title = " "
 # Set window height to 40 and width to 140
 window-height = 40
 window-width = 140
-
 # Set window padding to 13
 window-padding-x = 13
-window-padding-y = 13
+window-padding-y = 16
+# Extends window color
+window-padding-color = extend
+
+# Inherit working directory
+window-inherit-working-directory = true
 
 # Quit after the last surface is closed
 quit-after-last-window-closed = true
-
 # Put terminal in center on startup
 quick-terminal-position = center
 
 # Disable cursor blinking
 cursor-style-blink = false
+# Set cursor color
+cursor-color = #FF0000
 
-# Do not blur unfocused split
+# Hide mouse while typing
+mouse-hide-while-typing = true
+# Select the pane that is focused.
+focus-follows-mouse = true
+# Do not blur unfocused pane
 unfocused-split-opacity = 1
+
+# Allow read/write for clipboard
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+copy-on-select = true
+
+# Rebind horizontal and vertical split keys
+keybind = ctrl+a>v=new_split:right
+keybind = ctrl+a>-=new_split:down
