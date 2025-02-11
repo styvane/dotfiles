@@ -1,4 +1,4 @@
-theme = "light:OneHalfLight,dark:Monokai Pro Light"
+theme = "light:OneHalfLight,dark:Builtin Solarized Light"
 
 # Set font parameters.
 font-family = ""
