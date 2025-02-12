@@ -1,11 +1,11 @@
-theme = "light:OneHalfLight,dark:Builtin Solarized Light"
+theme = "light:Monokai Pro Light,dark:zenbones_light"
 
 # Set font parameters.
 font-family = ""
 font-family = "Monolisa Variable"
 font-feature = zero ss02 on
 font-size = 14
-font-style = SemiBold
+font-style = Medium
 
 # Remove window title
 title = " "

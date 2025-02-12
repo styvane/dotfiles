@@ -5,7 +5,7 @@
 add_newline = true
 
 [character]
-success_symbol = '[\$](bold #FF8C00)'
+success_symbol = '[\$](bold #191D2D)'
 
 [directory]
 style = 'bold green'
