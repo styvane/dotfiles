@@ -5,20 +5,20 @@
 add_newline = true
 
 [character]
-success_symbol = '[\$](bold #191D2D)'
+success_symbol = '[\$](bold #A3A3A3)'
 
 [directory]
-style = 'bold green'
+style = 'bold #606C38'
 
 [hostname]
 ssh_only = false
 disabled = false
-style = 'bold cyan'
+style = 'bold #006D77'
 
 [username]
 disabled = false
 show_always = true
-style_user = 'bold blue'
+style_user = 'bold #003566'
 format = '[$user]($style) at '
 
 # Disabled the following modules completely
