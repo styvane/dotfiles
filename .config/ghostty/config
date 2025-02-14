@@ -2,7 +2,7 @@ theme = "light:Monokai Pro Light, dark:zenbones_light"
 
 # Set font parameters.
 font-family = ""
-font-family = "Monolisa Variable"
+font-family = "MonoLisa Variable"
 font-feature = zero ss02 on
 font-size = 14
 font-style = Medium
@@ -39,6 +39,9 @@ focus-follows-mouse = true
 # Do not blur unfocused pane
 unfocused-split-opacity = 1
 
+# Change pane divider color
+split-divider-color = #780000
+
 # Allow read/write for clipboard
 clipboard-read = allow
 clipboard-write = allow
@@ -61,4 +64,5 @@ keybind = super+right=goto_split:right
 keybind = super+up=goto_split:top
 keybind = super+down=goto_split:bottom
 
-split-divider-color = #780000
+#  Download new stable version
+auto-update = download
