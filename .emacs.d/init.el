@@ -63,7 +63,7 @@
 ;; Clang Format configuration
 (use-package clang-format
   :commands (clang-format-buffer clang-format-on-save-mode)
-  :hook (asm-mode c-mode c++-mode protobuf-mode)
+  :hook (c-mode c++-mode protobuf-mode)
   :config
   (setq clang-format-fallback-style '"llvm"))
 
