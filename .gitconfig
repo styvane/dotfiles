@@ -1,65 +1,3 @@
-[init]
-	defaultBranch = main
-
-[push]
-	default = current
-       	autoSetupRemote = true
-	# Make `git push` push relevant annotated tags when pushing branches out.
-	followTags = true
-
-[fetch]
-        prune = true
-        pruneTags = true
-        all = true
-
-[branch]
-	# Show most recently changed branches first.
-	sort = -committerdate
-
-[tag]
-        sort = version:refname
-
-[commit]
-	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
-        verbose = true
-
-[rerere]
-        enabled = true
-        autoupdate = true
-
-[diff]
-        algorithm = histogram
-        mnemonicPrefix = true
-	# Detect copies as well as renames.
-	renames = copies
-
-        # Detect moved block by default
-        colorMoved = default
-
-
-[diff "bin"]
-	# Use `hexdump` to diff binary files.
-	textconv = hexdump -v -C
-
-[merge]
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
-
-        # Use zdiff3 conflict style
-        conflictstyle = zdiff3
-
-[filter "lfs"]
-        # Large FS configuration
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-
-[format]
-        # Do not add sign off by by default.
-	signoff = false
-
 [alias]
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
@@ -127,6 +65,74 @@
 	# Show the user email for the current repository.
 	whoami = config user.email
 
+
+[init]
+	defaultBranch = main
+
+[push]
+	default = current
+       	autoSetupRemote = true
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+
+[branch]
+	# Show most recently changed branches first.
+	sort = -committerdate
+
+[tag]
+        sort = version:refname
+
+[commit]
+	# https://help.github.com/articles/signing-commits-using-gpg/
+	gpgsign = true
+        verbose = true
+
+[rerere]
+        enabled = true
+        autoupdate = true
+
+[diff]
+        algorithm = histogram
+        mnemonicPrefix = true
+
+        # Detect copies as well as renames.
+	renames = copies
+
+        # Detect moved block by default
+        colorMoved = default
+
+        # Use difftastic as default diff tool
+        external = difft
+
+
+[diff "bin"]
+	# Use `hexdump` to diff binary files.
+	textconv = hexdump -v -C
+
+[merge]
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
+        # Use zdiff3 conflict style
+        conflictstyle = zdiff3
+
+[filter "lfs"]
+        # Large FS configuration
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[format]
+        # Do not add sign off by by default.
+	signoff = false
+
+
 [apply]
 	# Detect whitespace errors when applying a patch.
 	whitespace = fix
@@ -149,9 +155,6 @@
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
 
-        # Set pager
-        pager = delta
-
 [pull]
         rebase =  true
 
@@ -159,18 +162,6 @@
         autoSquash = true
         autoStash = true
         updateRefs = true
-
-[interactive]
-        # Diff filter setting
-        diffFilter = delta --color-only
-
-[delta]
-    # use n and N to move between diff sections
-    navigate = true
-    line-numbers = true
-    # hyperlinks = true
-    side-by-side = true
-
 
 [color "branch"]
         # Set branch colors.
