@@ -3,24 +3,40 @@
 
 [push]
 	default = current
-       	autosetupremote = true
+       	autoSetupRemote = true
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
+
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
 
 [branch]
 	# Show most recently changed branches first.
 	sort = -committerdate
 
+[tag]
+        sort = version:refname
+
 [commit]
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = true
+        verbose = true
+
+[rerere]
+        enabled = true
+        autoupdate = true
 
 [diff]
+        algorithm = histogram
+        mnemonicPrefix = true
 	# Detect copies as well as renames.
 	renames = copies
 
         # Detect moved block by default
         colorMoved = default
+
 
 [diff "bin"]
 	# Use `hexdump` to diff binary files.
@@ -135,6 +151,14 @@
 
         # Set pager
         pager = delta
+
+[pull]
+        rebase =  true
+
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
 
 [interactive]
         # Diff filter setting
