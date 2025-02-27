@@ -47,6 +47,7 @@ cargo binstall --locked --no-confirm \
       cargo-update \
       cargo-tarpaulin \
       cbindgen \
+      difftastic \
       eza \
       git-delta \
       maturin \
