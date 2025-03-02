@@ -1,6 +1,10 @@
 #!/bin/sh
 
 set -x
+
+# Install Homebrew
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 
