@@ -1,4 +1,4 @@
-theme = "light:Monokai Pro Light, dark:zenbones_light"
+theme = "light:Zenbones_light,dark:Zenbones_dark"
 
 # Set font parameters.
 font-family = ""
