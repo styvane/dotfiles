@@ -1,4 +1,3 @@
-
 ;; -*- lexical-binding: t; -*-
 
 (use-package package
@@ -10,9 +9,9 @@
   (package-archives '(("gnu"   . "http://elpa.gnu.org/packages/")
                       ("melpa" . "https://melpa.org/packages/")))
   (package-selected-packages
-      '(auto-dark-mode clang-format company flymake-ruff go-mode lsp-mode ocamlformat
-                  rainbow-delimiters ruff-format rustic smlfmt
-                  sqlformat toml-mode yaml-mode zig-mode)))
+   '(auto-dark clang-format company flymake-ruff go-mode lsp-mode
+               ocamlformat rainbow-delimiters ruff-format rustic
+               smlfmt sqlformat toml-mode yaml-mode zig-mode)))
 
 
 ;;; ----- Basic Configuration -----
@@ -55,7 +54,8 @@
  vc-follow-symlinks t
 
  ;; Flash the UI instead of beeping
- visible-bell t)
+ visible-bell t
+ backup-directory-alist '(("" . "~/.saves")))
 
 ;; Core modes
 (blink-cursor-mode 0)          ;; Disable cursor blinking
@@ -63,7 +63,6 @@
 (delete-selection-mode 1)      ;; Enable delete section
 (display-time-mode 1)          ;; Display time in mode line / tab bar
 (fido-vertical-mode 1)         ;; Improved vertical minibuffer completions
-(global-auto-revert-mode 1)    ;; Refresh buffers with changed local files
 (global-visual-line-mode 1)    ;; Visually wrap long lines in all buffers
 (menu-bar-mode 0)              ;; Hide the menu bar
 (repeat-mode 1)                ;; Enable repeating key maps
@@ -215,33 +214,7 @@
 ;; TOML mode configuration
 (use-package toml-mode :ensure t)
 
-
 ;; Auto insert
 ;; (auto-insert-mode)  ;;; Adds hook to find-files-hook
 ;; (setq auto-insert-directory "~/.emacs-templates/") ;;; Or use custom, *NOTE* Trailing slash important
 ;; (setq auto-insert-query nil) ;;; If you don't want to be prompted before insertion
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(backup-directory-alist '(("" . "~/.saves")))
- '(blink-cursor-mode nil)
- '(eglot-confirm-server-edits nil nil nil "Customized with use-package eglot")
- '(inhibit-default-init t)
- '(inhibit-startup-echo-area-message "")
- '(inhibit-startup-screen t)
- '(initial-scratch-message nil)
- '(menu-bar-mode nil)
- '(package-selected-packages
-   '(auto-dark clang-format company flymake-ruff go-mode lsp-mode
-               ocamlformat rainbow-delimiters ruff-format rustic
-               smlfmt sqlformat toml-mode yaml-mode zig-mode))
- '(scroll-bar-mode nil)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "PfEd")))))
