@@ -1,3 +1,4 @@
+
 ;; -*- lexical-binding: t; -*-
 
 (use-package package
@@ -22,7 +23,7 @@
  ad-redefinition-action 'accept
 
  ;; Instruct auto-save-mode to save to the current file, not a backup file
- auto-save-default nil
+ ;;auto-save-default nil
 
  ;; Revert Dired and other buffers
  global-auto-revert-non-file-buffers t
@@ -128,14 +129,53 @@
                       :height 140))
 
 
-(setopt frame-background-mode 'light)
-
 ;;; ----- Package Configuration -----
+
+;; Custome themes
+(use-package modus-themes
+  :ensure t
+  :custom
+  (modus-themes-bold-constructs t)
+  (modus-themes-italic-constructs t)
+  (modus-themes-custom-auto-reload t)
+  (modus-themes-disable-other-themes t)
+  (modus-themes-completions '((t semibold)))
+  (modus-themes-common-palette-overrides
+   `(
+     (rainbow-1 indigo)
+     (rainbow-4 rust)))
+
+  (modus-operandi-palette-overrides
+   `(
+     (preprocessor rust)
+     (bg-main "#ffffff");;#f0edec")
+     (bg-active bg-main)
+     (fg-main "#2c363c")
+     (fg-active fg-main)
+     (bg-line-number-inactive "#ccb7ae")
+     (fg-mode-line-active "#14213d")
+     (fg-completion white)
+     (bg-region "#cbd9e3")
+     (fg-region "#2c363c")
+     (keyword red-intense)
+     (preprocessor maroon)))
+
+   (modus-vivendi-palette-overrides
+   `(
+     (preprocessor red-warmer)
+     (bg-main "#252422")
+     (bg-active bg-main)
+     (bg-line-number-inactive "#403d39")
+     (string "#fde992")
+     (type "#f4f3ee")
+     (docstring olive)
+     (constant "#ffb4a2"))))
 
 ;; Auto dark mode configuration
 (use-package auto-dark
   :ensure t
   :custom
+  (auto-dark-themes '((modus-vivendi) (modus-operandi)))
   (auto-dark-allow-osascript t)
   :init (auto-dark-mode))
 
@@ -147,6 +187,7 @@
 (use-package lsp-mode
    :ensure t
    :commands (lsp lsp-deferred)
+   :bind-keymap ("C-c l" . lsp-command-map)
    :hook ((go-mode . lsp-deferred)
           (go-mode . go-fmt-before-save)
           (go-mode . lsp-organize-imports)
@@ -168,8 +209,7 @@
   :config
   (setq rustic-format-on-save t)
   :custom
-  (rustic-cargo-use-last-stored-arguments t)
-  (rustic-format-trigger 'on-save))
+  (rustic-cargo-use-last-stored-arguments t))
 
 ;; Ocaml formatting configuration
 (use-package ocamlformat
