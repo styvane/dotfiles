@@ -5,10 +5,11 @@
 add_newline = true
 
 [character]
-success_symbol = '[❯](bold #A3A3A3)'
+success_symbol = '[λ](bold #008080)'
+error_symbol = '[✗](bold #ba274a)'
 
 [directory]
-style = 'bold #606C38'
+style = 'bold #f2542d'
 
 [hostname]
 ssh_only = false
@@ -18,7 +19,7 @@ style = 'bold #006D77'
 [username]
 disabled = false
 show_always = true
-style_user = 'bold #136f63'
+style_user = 'bold #606c38'
 format = '[$user]($style) at '
 
 # Disabled the following modules completely
