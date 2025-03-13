@@ -51,6 +51,7 @@ cargo binstall --locked --no-confirm \
       eza \
       git-delta \
       maturin \
+      ripgrep \
       sqlx-cli \
       starship \
       tokio-console \
