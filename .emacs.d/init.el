@@ -134,42 +134,47 @@
 ;; Custome themes
 (use-package modus-themes
   :ensure t
+  :config
+  (setq
+     modus-themes-italic-constructs t
+     modus-themes-custom-auto-reload t
+     modus-themes-disable-other-themes t
+     modus-themes-common-palette-overrides modus-themes-preset-overrides-intense)
+
   :custom
-  (modus-themes-bold-constructs t)
-  (modus-themes-italic-constructs t)
-  (modus-themes-custom-auto-reload t)
-  (modus-themes-disable-other-themes t)
   (modus-themes-completions '((t semibold)))
   (modus-themes-common-palette-overrides
    `(
+     (fringe unspecified)
      (rainbow-1 indigo)
      (rainbow-4 rust)))
 
   (modus-operandi-palette-overrides
    `(
-     (preprocessor rust)
-     (bg-main "#ffffff");;#f0edec")
+     (bg-main "#f8f9f4")
      (bg-active bg-main)
-     (fg-main "#2c363c")
+     (fg-main "#191d2d")
      (fg-active fg-main)
      (bg-line-number-inactive "#ccb7ae")
      (fg-mode-line-active "#14213d")
-     (fg-completion white)
      (bg-region "#cbd9e3")
      (fg-region "#2c363c")
      (keyword red-intense)
-     (preprocessor maroon)))
+     (docstring "#15243e")
+     (type black)
+     (preprocessor yellow-warmer)))
 
    (modus-vivendi-palette-overrides
    `(
-     (preprocessor red-warmer)
      (bg-main "#252422")
      (bg-active bg-main)
      (bg-line-number-inactive "#403d39")
      (string "#fde992")
      (type "#f4f3ee")
      (docstring olive)
-     (constant "#ffb4a2"))))
+     (constant "#ffb4a2")
+     (preprocessor red-warmer))))
+
 
 ;; Auto dark mode configuration
 (use-package auto-dark
@@ -206,6 +211,7 @@
 ;; Rustic configuration
 (use-package rustic
   :ensure t
+  :hook (rustic-mode . (lambda () (flymake-mode -1)))
   :config
   (setq rustic-format-on-save t)
   :custom
@@ -253,6 +259,13 @@
 
 ;; TOML mode configuration
 (use-package toml-mode :ensure t)
+
+
+;;; ----- Custom tool configuration -----
+
+;; Make sure ripgrep is used everywhere
+(setq xref-search-program 'ripgrep
+      grep-command "rg -nS --noheading")
 
 ;; Auto insert
 ;; (auto-insert-mode)  ;;; Adds hook to find-files-hook
