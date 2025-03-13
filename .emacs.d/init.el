@@ -208,10 +208,17 @@
    (setq lsp-enable-snippet nil)
    (setq lsp-headerline-breadcrumb-enable nil))
 
+(use-package rust-mode
+  :ensure t
+  :init
+  :custom
+  (add-hook 'rust-mode-hook #'tree-sitter-mode))
+
 ;; Rustic configuration
 (use-package rustic
   :ensure t
   :hook (rustic-mode . (lambda () (flymake-mode -1)))
+  :after (rust-mode)
   :config
   (setq rustic-format-on-save t)
   :custom
@@ -245,6 +252,12 @@
   :config
   (setq clang-format-fallback-style '"llvm")
   (clang-format-on-save-mode))
+
+;; Protobuf mode configuration
+(use-package protobuf-mode
+  :ensure t
+  :config
+  (add-hook 'protobuf-mode-hook 'font-lock-mode))
 
 ;; SQL formatter
 (use-package sqlformat
