@@ -128,27 +128,23 @@
                       :weight 'medium
                       :height 140))
 
-
-;;; ----- Package Configuration -----
+;; I don't want to resize my marging
+(setq  flymake-autoresize-margins nil)
 
 ;; Custome themes
 (use-package modus-themes
-  :ensure t
+  :ensure nil
+  :demand t
   :config
   (setq
      modus-themes-italic-constructs t
      modus-themes-custom-auto-reload t
      modus-themes-disable-other-themes t
+     modus-themes-syntax '(alt-syntax)
      modus-themes-common-palette-overrides modus-themes-preset-overrides-intense)
 
   :custom
   (modus-themes-completions '((t semibold)))
-  (modus-themes-common-palette-overrides
-   `(
-     (fringe unspecified)
-     (rainbow-1 indigo)
-     (rainbow-4 rust)))
-
   (modus-operandi-palette-overrides
    `(
      (bg-main "#f8f9f4")
@@ -159,22 +155,28 @@
      (fg-mode-line-active "#14213d")
      (bg-region "#cbd9e3")
      (fg-region "#2c363c")
+     (rainbow-1 unspecified)
+     (rainbow-4 unspecified)
      (keyword red-intense)
      (docstring "#15243e")
      (type black)
      (preprocessor yellow-warmer)))
 
-   (modus-vivendi-palette-overrides
+    (modus-vivendi-palette-overrides
    `(
-     (bg-main "#252422")
+     (bg-main "#242423")
      (bg-active bg-main)
+     (fg-main "#f8f9f4")
      (bg-line-number-inactive "#403d39")
-     (string "#fde992")
-     (type "#f4f3ee")
-     (docstring olive)
-     (constant "#ffb4a2")
-     (preprocessor red-warmer))))
-
+     (rainbow-1 unspecified)
+     (rainbow-3 unspecified)
+     (rainbow-4 unspecified)
+     (type olive)
+     (fnname fg-main)
+     (keyword red-warmer)
+     (docstring yellow-cooler)
+     (comment "#a99985")
+     (preprocessor "#f8f9f4"))))
 
 ;; Auto dark mode configuration
 (use-package auto-dark
@@ -188,6 +190,7 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+;;; ----- Prog mode package configuration -----
 ;; Language server configuration with LSP
 (use-package lsp-mode
    :ensure t
