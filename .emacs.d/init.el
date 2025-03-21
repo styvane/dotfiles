@@ -128,10 +128,15 @@
                       :weight 'medium
                       :height 140))
 
-;; I don't want to resize my marging
-(setq  flymake-autoresize-margins nil)
+;; Disable flymake mode
+(setq flymake-autoresize-margins nil)
+(setq flymake-start-on-flymake-mode nil)
+(setq flymake-mode-line-format nil)
+(setq flymake-mode -1)
+(setq flymake-mode-line-counter-format nil)
+(add-hook 'find-file-hook (lambda () (flymake-mode -1)))
 
-;; Custome themes
+;; Custom themes
 (use-package modus-themes
   :ensure nil
   :demand t
@@ -220,7 +225,6 @@
 ;; Rustic configuration
 (use-package rustic
   :ensure t
-  :hook (rustic-mode . (lambda () (flymake-mode -1)))
   :after (rust-mode)
   :config
   (setq rustic-format-on-save t)
