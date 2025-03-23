@@ -47,8 +47,7 @@ brew curl \
      grep \
      nano \
      openssh \
-     vim
-
+     grpcurl
 
 # better `top`
 brew install bottom
@@ -69,6 +68,9 @@ brew bfg \
      binwalk \
      nmap \
      xz
+
+# Install better vim
+brew install helix
 
 # Install other useful binaries.
 brew install clang-format \
