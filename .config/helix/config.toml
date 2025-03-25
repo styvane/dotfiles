@@ -1,0 +1,11 @@
+theme = "onedark"
+
+[editor]
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+other-lines = "warning"
