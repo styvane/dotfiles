@@ -620,9 +620,16 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 # Disable smart quotes as it’s annoying for messages that contain code
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
-###############################################################################
-# Finalize and Kill affected applications                                                  #
-###############################################################################
+
+##################################################################################
+# Apple intelligence
+##################################################################################
+defaults write com.apple.CloudSubscriptionFeatures.optIn "545129924" -bool "false"
+
+
+##################################################################################
+# Finalize and Kill affected applications                                        #
+##################################################################################
 
 # Activate some of the above settings without a logout
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
