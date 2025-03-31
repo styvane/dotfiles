@@ -72,6 +72,9 @@ brew bfg \
 # Install better vim
 brew install helix
 
+# Install better file manager
+brew install yazi
+
 # Install other useful binaries.
 brew install clang-format \
      cmake \

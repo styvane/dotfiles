@@ -6,6 +6,18 @@ line-number = "relative"
 [editor.cursor-shape]
 insert = "bar"
 
+[keys.insert]
+C-b = "move_char_left"
+C-f = "move_char_right"
+C-s = ":w"
+
+[keys.normal]
+a = ["append_mode", "collapse_selection"]
+V = ["goto_first_nonwhitespace", "extend_to_line_end"]
+
+[keys.select]
+";" = ["collapse_selection", "normal_mode"]
+
 [editor.inline-diagnostics]
 cursor-line = "warning"
 other-lines = "warning"

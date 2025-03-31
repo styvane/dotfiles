@@ -50,14 +50,19 @@ cargo binstall --locked --no-confirm \
       difftastic \
       eza \
       git-delta \
+      harper-ls \
       maturin \
       ripgrep \
       sqlx-cli \
       starship \
       tokio-console \
+      typstyle \
       wash-cli \
       wasm-tools \
-      wkg
+      wkg \
+      yazi-cli \
+      yazi-fm
 
-# Install additional useful binaries with features
-cargo install --locked taplo-cli --features lsp
+
+ # Install additional useful binaries with features
+ cargo install --locked taplo-cli --features lsp

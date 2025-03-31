@@ -1,0 +1,74 @@
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
+
+[language-server.ruff]
+command = "uv"
+args = ["run", "ruff", "server"]
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.rust-analyzer.config.cargo]
+features = "all"
+
+[[language]]
+name = "c"
+file-types = ["c", "h"]
+formatter = { command = "clang-format" }
+auto-format = true
+
+[[language]]
+name = "cpp"
+file-types = ["cpp", "cc", "cxx", "hpp", "hcc", "hxx"]
+formatter = { command = "clang-format" }
+auto-format = true
+
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimports" }
+
+[[language]]
+name = "haskell"
+formatter = { command = "stylish-haskell", args = [] }
+auto-format = true
+
+[[language]]
+name = "ocaml"
+formatter = { command = "ocamlformat", args = ["-q", "--name=foo.ml", "-"] }
+auto-format = true
+
+[[language]]
+name = "protobuf"
+file-types = ["proto"]
+formatter = { command = "clang-format" }
+auto-format = true
+
+[[language]]
+name = "python"
+language-servers = ["ruff"]
+auto-format = true
+
+[[language]]
+name = "sql"
+formatter = { command = "sqlformat", args = [
+  "--reindent",
+  "--indent_width",
+  "2",
+  "--keywords",
+  "upper",
+  "--identifiers",
+  "lower",
+  "-",
+] }
+auto-format = true
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
+name = "typst"
+formatter.command = "typststyle"
+auto-format = true
