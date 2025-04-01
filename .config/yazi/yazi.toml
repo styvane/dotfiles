@@ -1,0 +1,8 @@
+[manager]
+sort_by = "extension"
+sort_sensitively = true
+sort_dir_first = true
+show_hidden = true
+
+[input]
+cursor_blink = false

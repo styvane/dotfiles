@@ -13,6 +13,14 @@ export PATH="/usr/local/go/bin:${GOPATH}/bin:${PATH}"
 # add rust path
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    # Add Homebrew installed bins to path.
+    eval "$(/opt/homebrew/bin/brew shellenv)";
+    for path in $(brew --prefix)/opt/*
+    do
+        PATH="${path}/bin:${PATH}";
+    done
+fi
 # update cdpath
 export CDPATH="${CDPATH}:${HOME}/labs:${HOME}/projects:${HOME}/contrib"
 
@@ -25,12 +33,5 @@ source "$HOME/.cargo/env"
 # Add GHCup path.
 source "$HOME/.ghcup/env" # ghcup-env
 
-
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-    # Add Homebrew to path.
-    eval "$(/opt/homebrew/bin/brew shellenv)";
-    for path in $(brew --prefix)/opt/*
-    do
-        PATH="${path}/bin:${PATH}";
-    done
-fi
+# Activate opam switch
+eval $(opam env)

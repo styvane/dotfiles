@@ -100,7 +100,6 @@ brew install --cask remarkable
 
 # Install programming languages compilers and tools.
 brew install llvm
-brew install opam
 
 # Install tla+
 brew install --cask tla-plus-toolbox

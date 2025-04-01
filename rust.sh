@@ -49,8 +49,10 @@ cargo binstall --locked --no-confirm \
       cbindgen \
       difftastic \
       eza \
+      fd-find \
       git-delta \
       harper-ls \
+      just \
       maturin \
       ripgrep \
       sqlx-cli \
@@ -66,3 +68,6 @@ cargo binstall --locked --no-confirm \
 
  # Install additional useful binaries with features
  cargo install --locked taplo-cli --features lsp
+
+ # Install dua
+ cargo install dua-cli --no-default-features
