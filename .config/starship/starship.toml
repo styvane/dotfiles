@@ -5,7 +5,7 @@
 add_newline = true
 
 [character]
-success_symbol = '[λ](bold #008080)'
+success_symbol = '[𝛌](bold #008080)'
 error_symbol = '[✗](bold #ba274a)'
 
 [directory]
