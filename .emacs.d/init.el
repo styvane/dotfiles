@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 
 ;; -*- lexical-binding: t; -*-
 
@@ -214,7 +215,10 @@
    (setq lsp-log-io nil) ; if set to true can cause a performance hit
    (setq lsp-lens-enable nil)
    (setq lsp-enable-snippet nil)
-   (setq lsp-headerline-breadcrumb-enable nil))
+   (setq lsp-signature-render-documentation nil)
+   (setq lsp-completion-provider :none)
+   (setq lsp-headerline-breadcrumb-enable nil)
+   (setq lsp-rust-analyzer-cargo-watch-command "clippy"))
 
 (use-package rust-mode
   :ensure t
@@ -230,6 +234,8 @@
   (setq rustic-format-on-save t)
   :custom
   (rustic-cargo-use-last-stored-arguments t))
+
+
 
 ;; Ocaml formatting configuration
 (use-package ocamlformat
