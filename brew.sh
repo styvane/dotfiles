@@ -119,5 +119,8 @@ brew install typst
 brew install zig
 brew install zls
 
+# Install cocoapods
+brew install cocoapods
+
 # Remove outdated versions from the cellar.
 brew cleanup

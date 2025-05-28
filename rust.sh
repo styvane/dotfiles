@@ -10,12 +10,16 @@ rustup component add llvm-tools
 rustup target add aarch64-linux-android \
      aarch64-unknown-linux-gnu \
      aarch64-apple-darwin \
-     aarch64-apple-ios\
+     aarch64-apple-ios  \
+     aarch64-apple-ios-sim \
+     armv7-linux-androideabi \
+     i686-linux-android x86_64-linux-android \
+     x86_64-apple-ios \
      x86_64-unknown-linux-gnu \
      wasm32-wasip1 \
      wasm32-wasip2
 
-
+ aarch64-linux-android
 # Install nightly toolchain
 rustup toolchain install nightly --allow-downgrade --profile minimal --component clippy rust-docs miri
 
@@ -47,6 +51,7 @@ cargo binstall --locked --no-confirm \
       cargo-update \
       cargo-tarpaulin \
       cbindgen \
+      create-tauri-app \
       difftastic \
       eza \
       fd-find \
@@ -57,10 +62,13 @@ cargo binstall --locked --no-confirm \
       ripgrep \
       sqlx-cli \
       starship \
+      tauri-cli \
       tokio-console \
+      trunk \
       typstyle \
       wash-cli \
       wasm-tools \
+      watchexec-cli \
       wkg \
       yazi-cli \
       yazi-fm
