@@ -140,33 +140,34 @@
 ;; Custom themes
 (use-package modus-themes
   :ensure nil
-  :demand t
   :config
   (setq
      modus-themes-italic-constructs t
      modus-themes-custom-auto-reload t
-     modus-themes-disable-other-themes t
+     modus-themes-variable-pitch-ui t
      modus-themes-syntax '(alt-syntax)
      modus-themes-common-palette-overrides modus-themes-preset-overrides-intense)
 
   :custom
   (modus-themes-completions '((t semibold)))
-  (modus-operandi-palette-overrides
-   `(
-     (bg-main "#f8f9f4")
-     (bg-active bg-main)
-     (fg-main "#191d2d")
-     (fg-active fg-main)
-     (bg-line-number-inactive "#ccb7ae")
-     (fg-mode-line-active "#14213d")
-     (bg-region "#cbd9e3")
-     (fg-region "#2c363c")
-     (rainbow-1 unspecified)
-     (rainbow-4 unspecified)
-     (keyword red-intense)
-     (docstring "#15243e")
-     (type black)
-     (preprocessor yellow-warmer)))
+   (modus-operandi-palette-overrides
+    `(
+      (bg-active bg-main)
+      (fg-main "#252422")
+      (fg-active fg-main)
+      (bg-line-number-inactive "#f5f3f4")
+      (fg-mode-line-active "#14213d")
+      (rainbow-1 unspecified)
+      (rainbow-4 unspecified)
+      (keyword "#9522bf")
+      (docstring "#6c757d")
+      (comment "#bfc0c0")
+      (fnname "#252422")
+      (variable "#eb5e28")
+      (type "#252422")
+      (property "#252422")
+      (string green-cooler)
+      (preprocessor red-intense)))
 
     (modus-vivendi-palette-overrides
    `(
