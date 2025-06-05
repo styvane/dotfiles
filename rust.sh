@@ -43,6 +43,7 @@ cargo binstall --locked --no-confirm \
       cargo-deny \
       cargo-expand \
       cargo-insta \
+      cargo-leptos \
       cargo-make \
       cargo-mutants \
       cargo-nextest \
@@ -62,6 +63,7 @@ cargo binstall --locked --no-confirm \
       ripgrep \
       sqlx-cli \
       starship \
+      starship-jj \
       tauri-cli \
       tokio-console \
       trunk \

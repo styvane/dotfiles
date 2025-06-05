@@ -160,13 +160,13 @@
       (rainbow-1 unspecified)
       (rainbow-4 unspecified)
       (keyword "#9522bf")
-      (docstring "#6c757d")
+      (docstring "#6d676e")
       (comment "#bfc0c0")
       (fnname "#252422")
       (variable "#eb5e28")
-      (type "#252422")
+      (type "#0b6e4f")
       (property "#252422")
-      (string green-cooler)
+      (string "#083d77")
       (preprocessor red-intense)))
 
     (modus-vivendi-palette-overrides
