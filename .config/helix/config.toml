@@ -1,10 +1,19 @@
-theme = "onedark"
+theme = "onelight"
 
 [editor]
 line-number = "relative"
+auto-completion = false
 
 [editor.cursor-shape]
 insert = "bar"
+
+# [editor.inline-diagnostics]
+# cursor-line = "warning"
+# other-lines = "warning"
+
+[editor.lsp]
+display-signature-help-docs = false
+auto-signature-help = false
 
 [keys.insert]
 C-b = "move_char_left"
@@ -17,7 +26,3 @@ V = ["goto_first_nonwhitespace", "extend_to_line_end"]
 
 [keys.select]
 ";" = ["collapse_selection", "normal_mode"]
-
-[editor.inline-diagnostics]
-cursor-line = "warning"
-other-lines = "warning"
