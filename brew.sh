@@ -89,7 +89,8 @@ brew install clang-format \
      pgformatter \
      p7zip \
      rename \
-     ssh-copy-id
+     ssh-copy-id \
+     yaml-language-server
 
 
 # Install protobuf
@@ -112,8 +113,14 @@ brew install smlfmt
 # Install racket
 brew install --cask racket
 
+# Install better merge tool
+brew install --cask meld
+
 # Install Typst
 brew install typst
+
+# Install YAML language server
+brew install yaml-language-server
 
 # Install zig and tools
 brew install zig
