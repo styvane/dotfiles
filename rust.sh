@@ -84,4 +84,7 @@ cargo binstall --locked --no-confirm \
  cargo install dua-cli --no-default-features
 
 # Install Markdown LSP
-cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git markdown-oxide
+ cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git markdown-oxide
+
+# Install better git
+cargo binstall --no-confirm --strategies crate-meta-data jj-cli
