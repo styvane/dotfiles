@@ -34,6 +34,7 @@ curl https://wasmtime.dev/install.sh -sSf | bash
 
 # Install additional useful binaries.
 cargo binstall --locked --no-confirm \
+      asm-lsp \
       bacon \
       bat \
       bunyan \
@@ -81,3 +82,6 @@ cargo binstall --locked --no-confirm \
 
  # Install dua
  cargo install dua-cli --no-default-features
+
+# Install Markdown LSP
+cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git markdown-oxide
