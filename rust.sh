@@ -60,6 +60,7 @@ cargo binstall --locked --no-confirm \
       git-delta \
       harper-ls \
       just \
+      leptosfmt \
       maturin \
       ripgrep \
       sqlx-cli \
