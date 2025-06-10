@@ -126,6 +126,9 @@ brew install yaml-language-server
 brew install zig
 brew install zls
 
+# Install HTML language server
+brew install superhtml
+
 # Install cocoapods
 brew install cocoapods
 
