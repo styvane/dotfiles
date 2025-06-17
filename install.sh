@@ -19,6 +19,3 @@ fi
 
 # Install Javascript, Typescript toolchains
 ./javascript.sh
-
-# Post Installation script
-./post-install.sh

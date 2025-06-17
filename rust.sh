@@ -16,10 +16,10 @@ rustup target add aarch64-linux-android \
      i686-linux-android x86_64-linux-android \
      x86_64-apple-ios \
      x86_64-unknown-linux-gnu \
+     wasm32-unknown-unknown \
      wasm32-wasip1 \
      wasm32-wasip2
 
- aarch64-linux-android
 # Install nightly toolchain
 rustup toolchain install nightly --allow-downgrade --profile minimal --component clippy rust-docs miri
 
@@ -37,6 +37,7 @@ cargo binstall --locked --no-confirm \
       asm-lsp \
       bacon \
       bat \
+      bottom \
       bunyan \
       cargo-audit \
       cargo-auditable \

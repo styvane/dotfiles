@@ -42,15 +42,12 @@ brew install wget
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew curl \
+brew install curl \
      gmp \
      grep \
      nano \
      openssh \
      grpcurl
-
-# better `top`
-brew install bottom
 
 # Install emacs
 brew install --cask emacs
@@ -63,7 +60,7 @@ brew install --cask ghostty
 brew install tmux
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew bfg \
+brew install bfg \
      binutils \
      binwalk \
      nmap \
@@ -92,7 +89,6 @@ brew install clang-format \
      ssh-copy-id \
      yaml-language-server
 
-
 # Install protobuf
 brew install protobuf
 
@@ -104,7 +100,6 @@ brew install llvm
 
 # Install tla+
 brew install --cask tla-plus-toolbox
-
 
 # Install smlnj
 brew install --cask smlnj
