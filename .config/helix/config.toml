@@ -1,4 +1,4 @@
-theme = "onelight"
+theme = "onedark"
 
 [editor]
 line-number = "relative"
@@ -19,10 +19,27 @@ auto-signature-help = false
 C-b = "move_char_left"
 C-f = "move_char_right"
 C-s = ":w"
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
 
 [keys.normal]
 a = ["append_mode", "collapse_selection"]
 V = ["goto_first_nonwhitespace", "extend_to_line_end"]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
 
 [keys.select]
 ";" = ["collapse_selection", "normal_mode"]
+

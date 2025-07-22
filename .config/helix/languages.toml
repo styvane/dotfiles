@@ -13,6 +13,10 @@ ForceStable = false
 [language-server.harper-ls.config.harper-ls.markdown]
 IgnoreLinkTitle = false
 
+[language-server.ty]
+command = "uv"
+args= ["run", "ty", "server"]
+
 [language-server.ruff]
 command = "uv"
 args = ["run", "ruff", "server"]
@@ -77,7 +81,7 @@ auto-format = true
 
 [[language]]
 name = "python"
-language-servers = ["ruff", "harper-ls"]
+language-servers = ["ruff", "ty", "harper-ls"]
 auto-format = true
 
 [[language]]
