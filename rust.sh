@@ -38,7 +38,6 @@ cargo binstall --locked --no-confirm \
       bacon \
       bat \
       bottom \
-      bunyan \
       cargo-audit \
       cargo-auditable \
       cargo-component \
@@ -63,6 +62,7 @@ cargo binstall --locked --no-confirm \
       just \
       leptosfmt \
       maturin \
+      nu \
       ripgrep \
       sqlx-cli \
       starship \
@@ -74,9 +74,7 @@ cargo binstall --locked --no-confirm \
       wash-cli \
       wasm-tools \
       watchexec-cli \
-      wkg \
-      yazi-cli \
-      yazi-fm
+      wkg
 
 
  # Install additional useful binaries with features

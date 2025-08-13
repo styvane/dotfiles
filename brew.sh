@@ -44,7 +44,6 @@ brew install gnupg
 # Install more recent versions of some macOS tools.
 brew install curl \
      gmp \
-     grep \
      nano \
      openssh \
      grpcurl
@@ -69,9 +68,6 @@ brew install bfg \
 # Install better vim
 brew install helix
 
-# Install better file manager
-brew install yazi
-
 # Install other useful binaries.
 brew install clang-format \
      cmake \
@@ -82,7 +78,6 @@ brew install clang-format \
      libpq \
      lua \
      markdown \
-     nushell \
      pgformatter \
      p7zip \
      rename \
@@ -123,9 +118,6 @@ brew install zls
 
 # Install HTML language server
 brew install superhtml
-
-# Install cocoapods
-brew install cocoapods
 
 # Remove outdated versions from the cellar.
 brew cleanup
