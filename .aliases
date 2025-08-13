@@ -13,12 +13,12 @@ alias .....="cd ../../../.."
 
 # Shortcuts
 alias dl="cd ${HOME}/Downloads"
-alias p="cd ${HOME}/Projects"
 alias g="git"
 alias h="history"
 alias gop="cd ${GOPATH}"
 alias lab="cd ${HOME}/Labs"
 alias contrib="cd ${HOME}/Contrib"
+alias w="cd ${HOME}/Work"
 
 # Copy aliases; works  on both macOS and Linux
 function pbcopy() {
@@ -137,8 +137,8 @@ alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	# shellcheck disable=SC2139,SC2140
-	alias "$method"="lwp-request -m \"$method\""
+    # shellcheck disable=SC2139,SC2140
+    alias "$method"="lwp-request -m \"$method\""
 done
 
 
@@ -170,5 +170,7 @@ alias prikey="more ~/.ssh/id_rsa | pbcopy | echo '=> Private key copied to paste
 # Print each PATH entry on a separate line
 alias path="echo -e ${PATH//:/\\n}"
 
-# List of every port that any program is listening on, on a Mac
-alias lsport="lsof -iTCP -sTCP:LISTEN -iUDP -n -P"
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    # List of every port that any program is listening on, on a Mac
+    alias listeners="lsof -iTCP -sTCP:LISTEN -iUDP -n -P"
+fi

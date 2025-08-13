@@ -26,9 +26,9 @@ done
 
 # Add tab completion for many Bash commands
 if which brew &> /dev/null && [ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
-	source "$(brew --prefix)/etc/profile.d/bash_completion.sh";
+    source "$(brew --prefix)/etc/profile.d/bash_completion.sh";
 elif [ -f /etc/bash_completion ]; then
-	source /etc/bash_completion;
+    source /etc/bash_completion;
 fi;
 
 
@@ -55,10 +55,10 @@ if type _git &> /dev/null; then
 fi;
 
  if [[ "$OSTYPE" =~ ^darwin ]]; then
-	# Add tab completion for `defaults read|write NSGlobalDomain`
-	# You could just use `-g` instead, but I like being explicit
-	complete -W "NSGlobalDomain" defaults;
+    # Add tab completion for `defaults read|write NSGlobalDomain` 
+    # You could just use `-g` instead, but I like being explicit
+    complete -W "NSGlobalDomain" defaults;
 
-	# Add `killall` tab completion for common apps
-	complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+    # Add `killall` tab completion for common apps
+    complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 fi

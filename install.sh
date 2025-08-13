@@ -17,5 +17,5 @@ fi
 # Install Haskell toolchains
 ./haskell.sh
 
-# Install Javascript, Typescript toolchains
+# Install Javascript, and Typescript toolchains
 ./javascript.sh

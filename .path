@@ -6,11 +6,11 @@ export PATH="/usr/local/bin:${PATH}:/sbin"
 # add local path
 export PATH="${HOME}/.local/bin:${PATH}"
 
-# add go path
+# add Go path
 export GOPATH="${HOME}/.go"
 export PATH="/usr/local/go/bin:${GOPATH}/bin:${PATH}"
 
-# add rust path
+# add Rust path
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
@@ -21,8 +21,9 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
         PATH="${path}/bin:${PATH}";
     done
 fi
+
 # update cdpath
-export CDPATH="${CDPATH}:${HOME}/labs:${HOME}/projects:${HOME}/contrib"
+export CDPATH="${CDPATH}:${HOME}/labs"
 
 # add wasmtime to path
 export PATH="$WASMTIME_HOME/bin:$PATH"
@@ -35,3 +36,8 @@ source "$HOME/.ghcup/env" # ghcup-env
 
 # Activate opam switch
 eval $(opam env)
+
+# Add Bun install configuration
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+

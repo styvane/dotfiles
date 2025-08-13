@@ -25,7 +25,6 @@ function doIt() {
 	else
 	    rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
-
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		--exclude ".macos" \
@@ -35,6 +34,10 @@ function doIt() {
 		--exclude "install.sh" \
 		--exclude "jon-tyson-unsplash.jpg" \
                 --exclude ".extra" \
+		--exclude "javascript.sh" \
+                --exclude "python.sh" \
+ 		--exclude "rust.sh" \
+		--exclude "haskell.sh" \
 		-avh --no-perms . ~;
 
 	fi

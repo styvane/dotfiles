@@ -8,4 +8,5 @@ uv tool install \
    pre-commit \
    ruff \
    tox --with tox-uv \
+   ty \
    voila

@@ -36,17 +36,18 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
 fi;
 
 # Install `wget`.
-brew install wget
+brew install wget --with-iri
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install curl \
-     gmp \
-     nano \
-     openssh \
-     grpcurl
+brew install curl
+brew install gmp
+brew install grpcurl
+brew install nano
+brew install openssh
+brew install vim --with-override-system-vi
 
 # Install emacs
 brew install --cask emacs
@@ -59,38 +60,40 @@ brew install --cask ghostty
 brew install tmux
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install bfg \
-     binutils \
-     binwalk \
-     nmap \
-     xz
+brew install bfg
+brew install binutils
+brew install binwalk
+brew install nmap
+brew install sqlmap
+brew install xz
 
 # Install better vim
 brew install helix
 
 # Install other useful binaries.
-brew install clang-format \
-     cmake \
-     fzf \
-     git \
-     git-lfs \
-     gs \
-     libpq \
-     lua \
-     markdown \
-     pgformatter \
-     p7zip \
-     rename \
-     ssh-copy-id \
-     yaml-language-server
+brew install clang-format
+brew install cmake
+brew install fzf
+brew install git
+brew install git-lfs
+brew install ghostscript
+brew install libpq
+brew install lua
+brew install markdown
+brew install pgformatter
+brew install p7zip
+brew install rename
+brew install ssh-copy-id
+brew install yaml-language-server
+brew install zopfli
 
 # Install protobuf
 brew install protobuf
 
-# Install remarkable
+# Install Remarkable application
 brew install --cask remarkable
 
-# Install programming languages compilers and tools.
+# Install LLVM
 brew install llvm
 
 # Install tla+
