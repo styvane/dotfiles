@@ -11,3 +11,5 @@ opam init -y --no-setup --enable-completion
 
 # Install  development environment
 opam install -y ocaml-lsp-server odoc ocamlformat utop dune
+
+# Note: Uninstall binutils in case of linker issue

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 VERSION="1.25.0"
 DIR="${HOME}/Downloads"
 wget "https://go.dev/dl/go${VERSION}.darwin-arm64.tar.gz" -P "${DIR}"
