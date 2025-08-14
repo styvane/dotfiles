@@ -3,8 +3,9 @@
 set -x
 
 # Install Homebrew
-NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
+export NONINTERACTIVE=1
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # Save Homebrew’s installed location.
 BREW_PREFIX=$(brew --prefix)
 
@@ -36,7 +37,7 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
 fi;
 
 # Install `wget`.
-brew install wget --with-iri
+brew install wget
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
@@ -47,7 +48,7 @@ brew install gmp
 brew install grpcurl
 brew install nano
 brew install openssh
-brew install vim --with-override-system-vi
+brew install vim
 
 # Install emacs
 brew install --cask emacs

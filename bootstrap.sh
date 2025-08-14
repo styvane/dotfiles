@@ -37,7 +37,8 @@ function doIt() {
 		--exclude "javascript.sh" \
                 --exclude "python.sh" \
  		--exclude "rust.sh" \
-		--exclude "haskell.sh" \
+		--exclude "install.sh" \
+                --exclude "ocaml.sh" \
 		-avh --no-perms . ~;
 
 	fi
