@@ -100,6 +100,10 @@ brew install llvm
 # Install tla+
 brew install --cask tla-plus-toolbox
 
+# Install Google Chromium version, sans dependency on
+# Google web services.
+brew install --cask ungoogled-chromium
+
 # Install smlnj
 brew install --cask smlnj
 brew install smlfmt
